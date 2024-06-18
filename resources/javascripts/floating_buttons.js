@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Variables:
     var layout = 'inline';
-    var theme = 'default';
+    var theme = localStorage.getItem('theme') || 'dark';
 
     // Buttons:
     const buttonAddTaskDesktopVersion = document.getElementById('button__add-task-desktop');
