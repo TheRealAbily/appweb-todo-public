@@ -1,3 +1,6 @@
+/* --- Import colors --- */
+@import url(variables_style.css);
+
 /* --- General --- */
 * {
     margin: 0;
@@ -12,23 +15,9 @@
 
 input::selection,
 textarea::selection {
-    background-color: #252d3a;
+    background-color: var(--bg-input);
 }
 
-/* --- Vars --- */
-:root {
-    --bg-color: #11151b;
-    --mbg-color: #191e25;
-    --b-color: #303541;
-
-    --time-anim-shake: 0.45s;
-    --type-anim: ease-in-out;
-    --time-anim-move-top: 0.45s;
-    --margin-top: 90px;
-    --time-delay: 0.25s;
-
-    --g-font-size: 13px;
-}
 
 body {
     background-color: var(--bg-color);
@@ -62,7 +51,7 @@ body {
     margin: 10px;
     padding: 15px;
 
-    color: #fff;
+    color: var(--general-font);
 
     display: flex;
 
@@ -112,7 +101,7 @@ body {
     margin: 0 auto;
     padding: 10px 20px;
 
-    background-color: #191e25;
+    background-color: var(--mbg-color);
 
     width: 80%;
     max-width: 750px;
@@ -131,7 +120,7 @@ body {
 
     width: 100%;
 
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 430;
@@ -153,7 +142,7 @@ body {
     height: 37px;
 
     background-color: var(--bg-color);
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -198,7 +187,7 @@ body {
     height: 37px;
 
     background-color: var(--bg-color);
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -273,7 +262,7 @@ body {
     margin: 0 auto;
     padding: 10px 20px;
 
-    background-color: #191e25;
+    background-color: var(--mbg-color);
 
     width: 80%;
     max-width: 750px;
@@ -292,7 +281,7 @@ body {
 
     width: 100%;
 
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 430;
@@ -314,7 +303,7 @@ body {
     height: 150px;
 
     background-color: var(--bg-color);
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -361,7 +350,7 @@ body {
     height: 150px;
 
     background-color: var(--bg-color);
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -448,7 +437,7 @@ body {
     margin: 0 auto;
     padding: 10px 20px;
 
-    background-color: #191e25;
+    background-color: var(--mbg-color);
 
     width: 80%;
     max-width: 750px;
@@ -475,7 +464,7 @@ body {
 
     min-width: 100%;
 
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 430;
@@ -506,7 +495,7 @@ body {
 
     height: 20px;
 
-    color: #ddd;
+    color: var(--status-text);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 430;
@@ -816,17 +805,17 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background-color: var(--mbg-color);
+    background-color: var(--scrollbar-track);
     border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgb(41, 46, 58);
+    background-color: var(--scrollbar-thumb);
     border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(106, 113, 129, 0.7);
+    background-color: var(--scrollbar-thumb-hover);
 }
 
 @keyframes shake {

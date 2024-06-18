@@ -1,3 +1,6 @@
+/* --- Import colors --- */
+@import url(variables_style.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +13,9 @@
 }
 
 input::selection {
-    background-color: #252d3a;
+    background-color: var(--bg-input);
 }
 
-:root {
-    --bg-color: #11151b;
-    --border-color: #303541;
-
-    --margin-top: 90px;
-    --time-anim-move-top: 0.45s;
-    --time-anim-shake: 0.45s;
-    --time-delay: 0.25s;
-    --type-anim: ease-in-out;
-
-    --g-font-size: 13px;
-}
 
 body {
     width: 100vw;
@@ -37,6 +28,26 @@ body {
     animation: wait-move-top var(--time-anim-move-top) var(--type-anim) forwards;
     animation-delay: calc(2 * var(--time-delay) + 0.05s);
 }
+
+/* --- Scroll bar (body) --- */
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+}
+
 
 #content__top {
     box-sizing: content-box;
@@ -60,7 +71,7 @@ body {
     margin: 10px;
     padding: 15px;
 
-    color: #fff;
+    color: var(--general-font);
 
     display: flex;
 
@@ -88,12 +99,12 @@ body {
 .content__middle-background {
     margin: 0 auto;
 
-    background-color: #191e25;
+    background-color: var(--mbg-color);
 
     width: 80%;
     max-width: 280px;
 
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--b-color);
     border-radius: 13px;
 
     box-sizing: content-box;
@@ -106,7 +117,7 @@ body {
     margin: 10px;
     padding: 7px;
 
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -126,14 +137,14 @@ body {
     height: 37px;
 
     background-color: var(--bg-color);
-    color: #fff;
+    color: var(--general-font);
 
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 13px;
     font-style: bold;
 
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--b-color);
     border-radius: 7px;
 
     box-sizing: border-box;
@@ -256,7 +267,7 @@ body {
     width: 80%;
     max-width: 280px;
 
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--b-color);
     border-radius: 13px;
 
     box-sizing: content-box;

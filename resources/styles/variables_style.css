@@ -1,0 +1,93 @@
+/* --- Global variables in CSS ---*/
+:root {
+    /* --- General --- */
+    --bg-color: #11151b;
+    --mbg-color: #191e25;
+    --b-color: #303541;
+    --general-font: #fff;
+    --general-font-light: #ffffff80;
+
+    --general-font-2: #a7a7a7;
+    --general-font-light-2: #ffffff26;
+    --status-text: #ddd;
+
+    /* --- Scroll --- */
+    --scrollbar-track: #232730;
+    --scrollbar-thumb: #393f4d;
+    --scrollbar-thumb-hover: #7c818fb3;
+
+    --scrollbar-thumb-2: #292e3a;
+    --scrollbar-thumb-hover-2: #595e6bb3;
+
+    /* --- Inputs --- */
+    --bg-input: #252d3a;
+
+    /* --- Aside --- */
+    --bg-aside: #1c2229;
+    --bg-aside-div-hover: #ffffff06;
+    --bg-aside-div-active: #ffffff09;
+    --bg-aside-div-icon-hover: #ffffffbf;
+    --bg-aside-div-icon-active: #ffffffff;
+
+    /* --- Tasks --- */
+    --general-icon: #fff;
+    --general-icon-light: #ffffffbf;
+
+    --bg-task-gradient-start: #202731;
+    --bg-task-gradient-end: #141a22bf;
+
+    --task-content-border: #545a69;
+    --task-content-light: #ffffff1a;
+
+    /* --- Aside buttons --- */
+    --bg-middle-button-icon: #fff;
+    --bg-middle-button-text: #fff;
+
+    --bg-middle-button-hover: #30354133;
+    --bg-middle-button-hover-icon: #ffffff59;
+
+    --bg-middle-button-selected: #30354180;
+    --bg-middle-button-selected-icon-light: #ffffff80;
+    --bg-middle-button-selected-text-light: #ffffff80;
+
+    --bg-middle-button-blue-text: #4f4fff;
+    --bg-middle-button-blue-icon: #4f4fff;
+    --bg-middle-button-blue-icon-light: #4f4fff99;
+    --bg-middle-button-blue-hover-icon-text: #4f4fffbf;
+
+    /* --- Floating buttons --- */
+    --bg-button-floating: #6781A6;
+    --bg-button-floating-icon: #fff;
+    --bg-button-floating-hover: #4C607B;
+    --bg-button-floating-icon-hover-light: #fff;
+    --bg-button-floating-border: #fff;
+    --bg-button-floating-shadow: 00000080;
+
+    /* --- Footer --- */
+    --bg-footer: #0d0f13;
+    --bg-footer-text: #fff;
+
+    /* --- Layout --- */
+    --container__section-section-desktop-div-container__task-max-width: none;
+    --container__section-section-desktop-div-container__task-max-height: none;
+    --container__section-section-desktop-div-container__task-box-sizing: content-box;
+
+    --container__section-section-desktop-div-flex-direction: column;
+    --container__section-section-desktop-div-wrap: none;
+
+    --container__section-section-desktop-div-justify-content: initial;
+    --container__section-section-desktop-div-align-items: initial;
+    --show-button__theme: 0;
+
+    /* --- Animations --- */
+    --time-anim-shake: 0.45s;
+    --type-anim: ease-in-out;
+    --time-anim-move-top: 0.45s;
+    --margin-top: 90px;
+    --time-delay: 0.25s;
+
+    /* --- Font --- */
+    --g-font-size: 13px;
+
+    /* --- The creation of this page almost led the programmer to suicide --- */
+}
