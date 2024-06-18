@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>New task</title>
+
+    <link rel='stylesheet' href='../resoruces/styles/new_task_style.css'>
+    <link rel='icon' href='../resoruces/images/icon.ico' type='image/x-icon'>
+    <link
+        href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap'
+        rel='stylesheet'>
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
+
+    <script scr='../resoruces/javascripts/set_theme.js' defer></script>
+    <script src='../resoruces/javascripts/status_task.js' defer></script>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class='main-content-top'>
+        <img alt='logo' src='../resoruces/images/logo.png' class='mct-img'>
+        <h1 class='mct-text'>Task</h1>
+    </header>
+
+    <!-- Add new tasks -->
+    <form class='main-content-bottom' id='form-new-task'>
+        <!-- Title -->
+        <section class='mcb-title'>
+            <div class='mcb-title-content'>
+                <p class='mcb-title-content-text'>Task title:</p>
+                <input class='mcb-title-content-input' type='text' id='title-task'>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <section class='mcb-description'>
+            <div class='mcb-description-content'>
+                <p class='mcb-description-content-text'>Task description:</p>
+                <textarea class='mcb-description-content-input' type='text' id='description-task'></textarea>
+            </div>
+        </section>
+
+        <!-- State -->
+        <section class='mcb-footer'>
+            <div class='mcb-footer-content'>
+                <div class='mcb-footer-content-left'>
+                    <p class='mcb-footer-content-left-text'>Status:</p>
+                    <div class='mcb-footer-content-left-status'>
+                        <div class='mcb-footer-content-left-status-n-text'>
+                            <p class='mcb-footer-content-left-status-text status-pending'>Pending</p>
+                            <span
+                                class='mcb-footer-content-left-status-button status-pending-button-active button-pending'><span
+                                    class='material-symbols-outlined mcb-footer-content-left-status-button-icon'>
+                                    schedule
+                                </span></span>
+                        </div>
+                        <div class='mcb-footer-content-left-status-n-text'>
+                            <p class='mcb-footer-content-left-status-text'>Delete</p>
+                            <span class='mcb-footer-content-left-status-button status-delete-button button-delete'><span
+                                    class='material-symbols-outlined mcb-footer-content-left-status-button-icon'>
+                                    delete
+                                </span></span>
+                        </div>
+                        <div class='mcb-footer-content-left-status-n-text'>
+                            <p class='mcb-footer-content-left-status-text'>Done</p>
+                            <span class='mcb-footer-content-left-status-button status-done-button button-done'><span
+                                    class='material-symbols-outlined mcb-footer-content-left-status-button-icon'>
+                                    check
+                                </span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='mcb-footer-content-right'>
+                    <button class='mcb-footer-content-right-button' type='submit' id='confirm-task'>Confirm</button>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>

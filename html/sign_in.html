@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>ToDo AppWeb</title>
+
+    <link rel='stylesheet' href='../resoruces/styles/sign_style.css'>
+    <link rel='icon' href='../resoruces/images/icon.ico' type='image/x-icon'>
+    <link
+        href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap'
+        rel='stylesheet'>
+
+    <script scr='../resoruces/javascripts/set_theme.js' defer></script>
+    <script src='../resoruces/javascripts/sign_validation.js' defer></script>
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+
+<body>
+    <header id='content__top'>
+        <img alt='logo' src='../resoruces/images/logo.png' id='content__top-img'>
+        <h1 id='content__top-text'>Sign in ToDo AppWeb</h1>
+    </header>
+
+    <section id='content__middle'>
+        <form class='content__middle-background' action='dashboard.html' id='form'>
+            <p class='content__middle-text'>Username or email</p>
+            <input class='content__middle-input' name='username-in' type='text' id='user-email' autocomplete='off'>
+            <p class='content__middle-text'>Password</p>
+            <input class='content__middle-input' name='password-in' type='password' id='password' autocomplete='off'>
+            <button class='content__middle-button content__middle-invalid-button' type='submit' id='submit-button'>Sign
+                in</button>
+        </form>
+    </section>
+
+    <footer id='content__bottom'>
+        <div id='content__bottom-background'>
+            <p class='content__bottom-text' id='content__bottom-text-bottom'>Don't have account?<a
+                    id='content__bottom-link' href='sign_up.html'>Sign
+                    up!</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

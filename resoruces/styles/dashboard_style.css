@@ -1,0 +1,1856 @@
+/* --- General --- */
+* {
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: transparent;
+}
+
+
+/* --- Vars --- */
+:root {
+    /* --- Colors (dark theme) --- */
+    --bg-color: #11151b;
+    --mbg-color: #191e25;
+    --b-color: #303541;
+
+    --scrollbar-track: #232730;
+    --scrollbar-thumb: #393f4d;
+    --scrollbar-thumb-hover: #7c818fb3;
+
+    --scrollbar-thumb-2: #292e3a;
+    --scrollbar-thumb-hover-2: #595e6bb3;
+
+    --general-font: #fff;
+    --general-font-light: #ffffff80;
+
+    --general-font-2: #a7a7a7;
+    --general-font-light-2: #ffffff26;
+    --f: #000000bf;
+    --bg-aside: #1c2229;
+    --bg-aside-div-hover: #ffffff06;
+    --bg-aside-div-active: #ffffff09;
+    --bg-aside-div-icon-hover: #ffffffbf;
+    --bg-aside-div-icon-active: #ffffffff;
+
+    --general-icon: #fff;
+    --general-icon-light: #ffffffbf;
+
+    --bg-task-gradient-start: #202731;
+    --bg-task-gradient-end: #141a22bf;
+
+    --task-content-border: #545a69;
+    --task-content-light: #ffffff1a;
+
+    --bg-middle-button-icon: #fff;
+    --bg-middle-button-text: #fff;
+
+    --bg-middle-button-hover: #30354133;
+    --bg-middle-button-hover-icon: #ffffff59;
+
+    --bg-middle-button-selected: #30354180;
+    --bg-middle-button-selected-icon-light: #ffffff80;
+    --bg-middle-button-selected-text-light: #ffffff80;
+
+    --bg-middle-button-blue-text: #4f4fff;
+    --bg-middle-button-blue-icon: #4f4fff;
+    --bg-middle-button-blue-icon-light: #4f4fff99;
+    --bg-middle-button-blue-hover-icon-text: #4f4fffbf;
+
+    --bg-button-floating: #6781A6;
+    --bg-button-floating-icon: #fff;
+    --bg-button-floating-hover: #4C607B;
+    --bg-button-floating-icon-hover-light: #fff;
+    --bg-button-floating-border: #fff;
+    --bg-button-floating-shadow: 00000080;
+
+    --bg-footer: #0d0f13;
+    --bg-footer-text: #fff;
+
+    /* --- Layout --- */
+    --container__section-section-desktop-div-container__task-max-width: none;
+    --container__section-section-desktop-div-container__task-max-height: none;
+    --container__section-section-desktop-div-container__task-box-sizing: content-box;
+
+    --container__section-section-desktop-div-flex-direction: column;
+    --container__section-section-desktop-div-wrap: none;
+
+    --container__section-section-desktop-div-justify-content: initial;
+    --container__section-section-desktop-div-align-items: initial;
+    --show-button__theme: 0;
+
+    /* --- Colors (light theme) --- */
+    --bg-color: #11151b;
+    --mbg-color: #191e25;
+    --b-color: #303541;
+
+    --scrollbar-track: #232730;
+    --scrollbar-thumb: #393f4d;
+    --scrollbar-thumb-hover: #7c818fb3;
+
+    --scrollbar-thumb-2: #292e3a;
+    --scrollbar-thumb-hover-2: #595e6bb3;
+
+    --general-font: #fff;
+    --general-font-light: #ffffff80;
+
+    --general-font-2: #a7a7a7;
+    --general-font-light-2: #ffffff26;
+    --f: #000000bf;
+    --bg-aside: #1c2229;
+    --bg-aside-div-hover: #ffffff06;
+    --bg-aside-div-active: #ffffff09;
+    --bg-aside-div-icon-hover: #ffffffbf;
+    --bg-aside-div-icon-active: #ffffffff;
+
+    --general-icon: #fff;
+    --general-icon-light: #ffffffbf;
+
+    --bg-task-gradient-start: #202731;
+    --bg-task-gradient-end: #141a22bf;
+
+    --task-content-border: #545a69;
+    --task-content-light: #ffffff1a;
+
+    --bg-middle-button-icon: #fff;
+    --bg-middle-button-text: #fff;
+
+    --bg-middle-button-hover: #30354133;
+    --bg-middle-button-hover-icon: #ffffff59;
+
+    --bg-middle-button-selected: #30354180;
+    --bg-middle-button-selected-icon-light: #ffffff80;
+    --bg-middle-button-selected-text-light: #ffffff80;
+
+    --bg-middle-button-blue-text: #4f4fff;
+    --bg-middle-button-blue-icon: #4f4fff;
+    --bg-middle-button-blue-icon-light: #4f4fff99;
+    --bg-middle-button-blue-hover-icon-text: #4f4fffbf;
+
+    --bg-button-floating: #6781A6;
+    --bg-button-floating-icon: #fff;
+    --bg-button-floating-hover: #4C607B;
+    --bg-button-floating-icon-hover-light: #fff;
+    --bg-button-floating-border: #fff;
+    --bg-button-floating-shadow: 00000080;
+
+    --bg-footer: #0d0f13;
+    --bg-footer-text: #fff;
+
+    /* --- The creation of this page almost led the programmer to suicide --- */
+}
+
+
+/* --- Scroll bar (body) --- */
+html::-webkit-scrollbar {
+    width: 15px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+
+    border-radius: 15px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+}
+
+
+/* --- Body -- */
+body {
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--bg-color);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- Scroll bar (Body) --- */
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-2);
+
+    border-radius: 15px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-2);
+}
+
+
+/* --- Main container (mobile version) --- */
+.container__section-mobile {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Main container (mobile version) responsive --- */
+@media screen and (min-width: 721px) {
+    .container__section-mobile {
+        display: none;
+    }
+}
+
+
+/* --- Header (mobile version) --- */
+.container__section-mobile-header {
+    width: 100%;
+
+    background-color: var(--mbg-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid var(--b-color);
+}
+
+/* --- Header (img) --- */
+.container__section-mobile-header-img {
+    margin-top: 45px;
+
+    width: 22.5%;
+    height: auto;
+
+    max-width: 85px;
+}
+
+/* --- Header (text) --- */
+.container__section-mobile-header-h1 {
+    margin: 25px auto 20px;
+
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+
+    text-align: center;
+}
+
+/* --- Header responsive --- */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+
+    /* --- Header (img) --- */
+    .container__section-mobile-header-img {
+        max-width: 70px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Header (text) --- */
+    .container__section-mobile-header-p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    /* --- Header (img) --- */
+    .container__section-mobile-header-img {
+        max-width: 60px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Header (text) --- */
+    .container__section-mobile-header-p {
+        font-size: 14px;
+    }
+}
+
+
+/* --- Section (mobile version) --- */
+.container__section-section-mobile {
+    display: flex;
+    flex-grow: 1;
+
+    overflow-y: auto;
+}
+
+
+/* --- Aside (mobile version) --- */
+.container__section-section-mobile-aside {
+    min-width: 65px;
+    height: 100%;
+
+    background-color: var(--bg-aside);
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    border-right: 2px solid var(--b-color);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- Aside (div) --- */
+.container__section-section-mobile-aside-div {
+    margin: 5px;
+
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+/* --- Aside (div) | Hover --- */
+.container__section-section-mobile-aside-div:hover {
+    background-color: var(--bg-aside-div-hover);
+}
+
+/* --- Aside (div) | Active --- */
+.container__section-section-mobile-aside-div:active {
+    background-color: var(--bg-aside-div-active);
+}
+
+/* --- Aside (icon) --- */
+.container__section-section-mobile-aside-div-span {
+    color: var(--general-icon);
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+/* --- Aside (icon) | Hover --- */
+.container__section-section-mobile-aside-div:hover .container__section-section-mobile-aside-div-span {
+    filter: var(--bg-aside-div-icon-hover);
+}
+
+/* --- Aside (icon) | Active --- */
+.container__section-section-mobile-aside-div:active .container__section-section-mobile-aside-div-span {
+    filter: var(--bg-aside-div-icon-active);
+}
+
+
+/* --- Div (mobile version) --- */
+.container__section-section-mobile-div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- Scroll bar (Div) --- */
+.container__section-section-mobile-div::-webkit-scrollbar {
+    width: 15px;
+}
+
+.container__section-section-mobile-div::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+}
+
+.container__section-section-mobile-div::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+
+    border-radius: 15px;
+}
+
+.container__section-section-mobile-div::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+}
+
+
+/* --- Task container (mobile version) --- */
+.container__section-section-mobile-div-container__task {
+    padding: 15px;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Task (mobile version) --- */
+.container__section-section-mobile-div-container__task-task {
+    width: 100%;
+    max-height: 235px;
+
+    background-image: linear-gradient(to bottom, var(--bg-task-gradient-start), var(--bg-task-gradient-end));
+
+    border: 2px solid var(--b-color);
+    border-radius: 15px;
+
+    box-sizing: content-box;
+}
+
+/* --- Task | Hover (mobile version) --- */
+.container__section-section-mobile-div-container__task-task:hover {
+    border: 2px solid var(--task-content-border);
+
+    filter: drop-shadow(0 0 7px var(--task-content-light));
+}
+
+
+/* --- Task top (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__top {
+    width: 100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+/* --- Task top icon (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__top-span {
+    margin: 20px;
+
+    color: var(--general-icon);
+
+    filter: drop-shadow(0 0 7px var(--general-icon-light));
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+
+/* --- Task top text (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__top-h1 {
+    margin: 20px 20px 20px 0;
+
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+
+    flex-grow: 1;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    display: block;
+
+    filter: drop-shadow(0 0 3px var(--general-font-light));
+}
+
+
+/* --- Task middle (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__middle {
+    width: 100%;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Task middle text (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__middle-p {
+    margin: 0 20px;
+
+    color: var(--general-font-2);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: left;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+/* --- Task bottom (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom {
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Task bottom left container (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-left__container {
+    width: 70%;
+}
+
+
+/* --- Task bottom left container text (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-left__container-p {
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    filter: drop-shadow(0 0 3px var(--general-font-light-2));
+}
+
+
+/* --- Task bottom right container (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container {
+    width: 30%;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+/* --- Task bottom right container text pending (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending {
+    padding-right: 10px;
+
+    color: rgb(134, 134, 134);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(134, 134, 134, 0.75));
+}
+
+
+/* --- Task bottom right container text delete (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-delete {
+    padding-right: 10px;
+
+    color: #b20b0b;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(178, 11, 11, 0.75));
+}
+
+
+/* --- Task bottom right container text done (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-done {
+    padding-right: 10px;
+
+    color: #0bb27a;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(11, 178, 122, 0.75));
+}
+
+
+/* --- Task bottom right container box pending (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending {
+    background-color: #666;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px hsla(160, 0%, 37%, 0.5));
+}
+
+
+/* --- Task bottom right container box delete (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-delete {
+    background-color: #b20b0b;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px rgba(178, 11, 11, 0.5));
+}
+
+
+/* --- Task bottom right container box done (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-done {
+    background-color: #0bb27a;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px rgba(11, 178, 122, 0.5));
+}
+
+
+/* --- Task bottom right container box (general status) icon (mobile version) --- */
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span,
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-delete-span,
+.container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-done-span {
+    color: #fff;
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+
+/* --- Panel buttons container background (mobile version) --- */
+.container__section-mobile-section__background {
+    width: 100%;
+    height: 200%;
+
+    background-color: #000;
+
+    position: fixed;
+
+    z-index: 250;
+
+    opacity: 0;
+
+    animation: panel-opacity 0.4s ease-in-out forwards;
+}
+
+/* --- Panel buttons container background hide (mobile version) --- */
+.container__section-mobile-section__background__hide {
+    display: none;
+
+    opacity: 0;
+}
+
+/* --- Panel buttons container animation opacity (mobile version) --- */
+@keyframes panel-opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+/* --- Panel buttons container (mobile version) --- */
+.container__section-mobile-section {
+    width: 100%;
+    height: 200%;
+
+    position: fixed;
+
+    z-index: 500;
+
+    transform: translateX(-100vh);
+
+    animation: panel-move 0.4s ease-in-out forwards;
+}
+
+/* --- Panel buttons container hide (mobile version) --- */
+.container__section-mobile-section__hide {
+    display: none;
+
+    transform: translateX(-100vh);
+}
+
+/* --- Panel buttons container animation move (mobile version) --- */
+@keyframes panel-move {
+    0% {
+        transform: translateX(-100vh);
+    }
+
+    90% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* --- Panel buttons --- */
+.container__section-mobile-section-div {
+    width: 50%;
+    max-width: 275px;
+    height: 100vh;
+
+    background-color: var(--bg-color);
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 2px solid var(--b-color);
+}
+
+
+/* --- Panel buttons div (top) --- */
+.container__section-mobile-section-div-div__top {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div img (top) --- */
+.container__section-mobile-section-div-div__top-img {
+    margin-top: 40px;
+
+    width: 40%;
+    max-width: 80px;
+    height: auto;
+}
+
+
+/* --- Panel buttons div text (top) --- */
+.container__section-mobile-section-div-div__top-h1 {
+    margin: 25px auto 35px;
+
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+
+    text-align: center;
+}
+
+/* --- Panel buttons div responsive --- */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+
+    /* --- Panel buttons div (img) --- */
+    .container__section-mobile-section-div-div__top-img {
+        max-width: 70px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Panel buttons div (text) --- */
+    .container__section-mobile-section-div-div__top-p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    /* --- Panel buttons div (img) --- */
+    .container__section-mobile-section-div-div__top-img {
+        max-width: 60px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Panel buttons div (text) --- */
+    .container__section-mobile-section-div-div__top-p {
+        font-size: 14px;
+    }
+}
+
+
+/* --- Panel buttons div (middle) --- */
+.container__section-mobile-section-div-div__middle {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div a (middle) --- */
+.container__section-mobile-section-div-div__middle-a {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a (middle) | Hover --- */
+.container__section-mobile-section-div-div__middle-a:hover {
+    background-color: var(--bg-middle-button-hover);
+}
+
+/* --- Panel buttons div a (middle) | Hover (icon) --- */
+.container__section-mobile-section-div-div__middle-a:hover .container__section-mobile-section-div-div__middle-a-span,
+.container__section-mobile-section-div-div__middle-a:hover .container__section-mobile-section-div-div__middle-a-p {
+    background-color: var(--bg-middle-button-hover-icon);
+}
+
+
+/* --- Panel buttons div a selected (middle) --- */
+.container__section-mobile-section-div-div__middle-a-selected {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    background-color: var(--bg-middle-button-selected);
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a selected icon (middle) --- */
+.container__section-mobile-section-div-div__middle-a-selected .container__section-mobile-section-div-div__middle-a-span {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-selected-icon-light));
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 430,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+/* --- Panel buttons div a selected text (middle) --- */
+.container__section-mobile-section-div-div__middle-a-selected .container__section-mobile-section-div-div__middle-a-p {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-selected-text-light));
+}
+
+
+/* --- Panel buttons div a span (middle) --- */
+.container__section-mobile-section-div-div__middle-a-span {
+    margin: 20px 20px 20px 35px;
+
+    color: var(--bg-middle-button-icon);
+}
+
+/* --- Panel buttons div a text (middle) --- */
+.container__section-mobile-section-div-div__middle-a-p {
+    color: var(--bg-middle-button-text);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 17px;
+
+    text-align: left;
+}
+
+/* --- Panel buttons div a span responsive --- */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+
+    /* --- Panel buttons div a (middle) --- */
+    .container__section-mobile-section-div-div__middle-a-span {
+        margin: 15px 15px 15px 26px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-mobile-section-div-div__middle-a-p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    /* --- Panel buttons div a (middle) --- */
+    .container__section-mobile-section-div-div__middle-a-span {
+        margin: 10px 10px 10px 18px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-mobile-section-div-div__middle-a-p {
+        font-size: 11px;
+    }
+}
+
+
+/* --- Panel buttons div (bottom) --- */
+.container__section-mobile-section-div-div__bottom {
+    width: 100%;
+
+    display: flex;
+    align-items: end;
+    flex-grow: 1;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div a (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+/* --- Panel buttons div a (bottom) | Hover --- */
+.container__section-mobile-section-div-div__bottom-a:hover {
+    background-color: var(--bg-middle-button-hover);
+}
+
+/* --- Panel buttons div a (bottom) | Hover (icon) --- */
+.container__section-mobile-section-div-div__bottom-a:hover .container__section-mobile-section-div-div__bottom-a-span,
+.container__section-mobile-section-div-div__bottom-a:hover .container__section-mobile-section-div-div__bottom-a-p {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-hover-icon-text));
+}
+
+
+/* --- Panel buttons div a selected (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a-selected {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    background-color: var(--bg-middle-button-selected);
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a selected icon (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a-selected .container__section-mobile-section-div-div__bottom-a-span {
+    color: var(--bg-middle-button-blue-icon);
+
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-icon-light));
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 430,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+/* --- Panel buttons div a selected text (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a-selected .container__section-mobile-section-div-div__bottom-a-p {
+    color: var(--bg-middle-button-blue-icon);
+
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-icon-light));
+}
+
+
+/* --- Panel buttons div a span (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a-span {
+    margin: 20px 20px 20px 35px;
+
+    color: var(--bg-middle-button-blue-text);
+}
+
+/* --- Panel buttons div a text (bottom) --- */
+.container__section-mobile-section-div-div__bottom-a-p {
+    color: var(--bg-middle-button-blue-text);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 17px;
+
+    text-align: left;
+}
+
+/* --- Panel buttons div a span responsive --- */
+@media screen and (min-width: 401px) and (max-width: 550px) {
+
+    /* --- Panel buttons div a (bottom) --- */
+    .container__section-mobile-section-div-div__bottom-a-span {
+        margin: 15px 15px 15px 26px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-mobile-section-div-div__bottom-a-p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    /* --- Panel buttons div a (bottom) --- */
+    .container__section-mobile-section-div-div__bottom-a-span {
+        margin: 10px 10px 10px 18px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-mobile-section-div-div__bottom-a-p {
+        font-size: 11px;
+    }
+}
+
+
+/* --- Button add task, theme, layout (mobile & desktop version) --- */
+.container__section-button__add-task-mobile,
+.container__section-button__add-task-desktop,
+.container__section-button__theme-mobile,
+.container__section-button__theme-desktop,
+.container__section-button__layout-desktop {
+    width: 65px;
+    height: 65px;
+
+    background-color: var(--bg-button-floating);
+    color: var(--bg-button-floating-icon);
+
+    position: fixed;
+
+    bottom: 25px;
+    right: 40px;
+
+    z-index: 200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--bg-button-floating-border);
+    border-radius: 100%;
+
+    box-shadow: 5px 5px 15px var(--bg-button-floating-shadow);
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+.container__section-button__add-task-mobile:hover,
+.container__section-button__add-task-desktop:hover,
+.container__section-button__theme-mobile:hover,
+.container__section-button__theme-desktop:hover,
+.container__section-button__layout-desktop:hover {
+    background-color: var(--bg-button-floating-hover);
+}
+
+.container__section-button__add-task-mobile:hover span,
+.container__section-button__add-task-desktop:hover span,
+.container__section-button__theme-mobile:hover span,
+.container__section-button__theme-desktop:hover span,
+.container__section-button__layout-desktop:hover span {
+    filter: drop-shadow(0 0 20px var(--bg-button-floating-icon-hover-light));
+}
+
+.container__section-button__theme-mobile,
+.container__section-button__theme-desktop {
+    right: calc(-200px + (330px * var(--show-button__theme)));
+}
+
+.container__section-button__layout-desktop {
+    right: calc(130px + (90px * var(--show-button__theme)));
+}
+
+@media screen and (max-width: 720px) {
+    .container__section-button-desktop {
+        display: none;
+    }
+}
+
+/* --- Footer --- */
+.container__footer {
+    padding: 15px 0;
+
+    width: 100%;
+
+    background-color: var(--bg-footer);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+
+    border-top: 2px solid var(--b-color);
+}
+
+/* --- Footer (height) responsive --- */
+@media (min-width: 721px) {
+    .container__footer {
+        height: 125px;
+    }
+}
+
+/* --- Footer (text) --- */
+.container__footer-p {
+    margin: 5px 0;
+    padding-left: 2px;
+
+    max-width: 50%;
+
+    color: var(--bg-footer-text);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 13px;
+
+    text-align: left;
+
+    flex: 1 1 50%;
+
+    box-sizing: border-box;
+}
+
+/* --- Footer (text right) --- */
+.container__footer-p-right {
+    padding-right: 2px;
+
+    text-align: right;
+}
+
+/* --- Footer responsive --- */
+@media (max-width: 720px) {
+
+    /* --- Footer --- */
+    .container__footer {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    /* --- Footer (text) --- */
+    .container__footer-p {
+        padding-left: 0;
+
+        width: 100%;
+
+        text-align: center;
+
+        flex: none;
+    }
+
+    /* --- Footer (text right) --- */
+    .container__footer-p-right {
+        padding-right: 0;
+    }
+}
+
+
+/* --- Main container (desktop version) --- */
+.container__section-desktop {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+}
+
+/* --- Main container (desktop version) responsive --- */
+@media screen and (max-width: 720px) {
+    .container__section-desktop {
+        display: none;
+    }
+}
+
+
+/* --- Section (desktop version) --- */
+.container__section-section-desktop {
+    max-width: 100%;
+
+    display: flex;
+    flex-grow: 1;
+}
+
+
+/* --- Div (desktop version) --- */
+.container__section-section-desktop-div {
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-direction: var(--container__section-section-desktop-div-flex-direction);
+    flex-wrap: var(--container__section-section-desktop-div-wrap);
+
+    justify-content: var(--container__section-section-desktop-div-justify-content);
+    align-items: var(--container__section-section-desktop-div-align-items);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- Scroll bar (Div) --- */
+.container__section-section-desktop-div::-webkit-scrollbar {
+    width: 15px;
+}
+
+.container__section-section-desktop-div::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+}
+
+.container__section-section-desktop-div::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+
+    border-radius: 15px;
+}
+
+.container__section-section-desktop-div::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+}
+
+
+/* --- Aside (desktop version) --- */
+.container__section-section-desktop-aside {
+    min-width: 300px;
+    height: 100%;
+
+    background-color: var(--mbg-color);
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 2px solid var(--b-color);
+
+    box-sizing: border-box;
+}
+
+
+/* --- Panel buttons div (top) --- */
+.container__section-section-desktop-aside-div__top {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div img (top) --- */
+.container__section-section-desktop-aside-div__top-img {
+    margin-top: 40px;
+
+    width: 40%;
+    max-width: 80px;
+    height: auto;
+}
+
+
+/* --- Panel buttons div text (top) --- */
+.container__section-section-desktop-aside-div__top-h1 {
+    margin: 25px auto 35px;
+
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+
+    text-align: center;
+}
+
+/* --- Panel buttons div responsive --- */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+
+    /* --- Aside (desktop version) --- */
+    .container__section-section-desktop-aside {
+        min-width: 250px;
+    }
+
+    /* --- Panel buttons div (img) --- */
+    .container__section-section-desktop-aside-div__top-img {
+        max-width: 70px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Panel buttons div (text) --- */
+    .container__section-section-desktop-aside-div__top-p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* --- Aside (desktop version) --- */
+    .container__section-section-desktop-aside {
+        min-width: 200px;
+    }
+
+    /* --- Panel buttons div (img) --- */
+    .container__section-section-desktop-aside-div__top-img {
+        max-width: 60px;
+
+        margin-top: 35px;
+    }
+
+    /* --- Panel buttons div (text) --- */
+    .container__section-section-desktop-aside-div__top-p {
+        font-size: 14px;
+    }
+}
+
+
+/* --- Panel buttons div (middle) --- */
+.container__section-section-desktop-aside-div__middle {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div a (middle) --- */
+.container__section-section-desktop-aside-div__middle-a {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a (middle) | Hover --- */
+.container__section-section-desktop-aside-div__middle-a:hover {
+    background-color: var(--bg-middle-button-hover);
+}
+
+/* --- Panel buttons div a (middle) | Hover (icon) --- */
+.container__section-section-desktop-aside-div__middle-a:hover .container__section-section-desktop-aside-div__middle-a-span,
+.container__section-section-desktop-aside-div__middle-a:hover .container__section-section-desktop-aside-div__middle-a-p {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-hover-icon));
+}
+
+
+/* --- Panel buttons div a selected (middle) --- */
+.container__section-section-desktop-aside-div__middle-a-selected {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    background-color: var(--bg-middle-button-selected);
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a selected icon (middle) --- */
+.container__section-section-desktop-aside-div__middle-a-selected .container__section-section-desktop-aside-div__middle-a-span {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-selected-icon-light));
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 430,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+/* --- Panel buttons div a selected text (middle) --- */
+.container__section-section-desktop-aside-div__middle-a-selected .container__section-section-desktop-aside-div__middle-a-p {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-selected-text-light));
+}
+
+
+/* --- Panel buttons div a span (middle) --- */
+.container__section-section-desktop-aside-div__middle-a-span {
+    margin: 20px 20px 20px 35px;
+
+    color: var(--bg-middle-button-icon);
+}
+
+/* --- Panel buttons div a text (middle) --- */
+.container__section-section-desktop-aside-div__middle-a-p {
+    color: var(--bg-middle-button-text);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 17px;
+
+    text-align: left;
+}
+
+/* --- Panel buttons div a span responsive --- */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+
+    /* --- Panel buttons div a (middle) --- */
+    .container__section-section-desktop-aside-div__middle-a-span {
+        margin: 15px 15px 15px 26px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-section-desktop-aside-div__middle-a-p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* --- Panel buttons div a (middle) --- */
+    .container__section-section-desktop-aside-div__middle-a-span {
+        margin: 10px 10px 10px 18px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-section-desktop-aside-div__middle-a-p {
+        font-size: 11px;
+    }
+}
+
+
+/* --- Panel buttons div (bottom) --- */
+.container__section-section-desktop-aside-div__bottom {
+    width: 100%;
+
+    display: flex;
+    align-items: end;
+    flex-grow: 1;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Panel buttons div a (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+/* --- Panel buttons div a (bottom) | Hover --- */
+.container__section-section-desktop-aside-div__bottom-a:hover {
+    background-color: var(--bg-middle-button-hover);
+}
+
+/* --- Panel buttons div a (bottom) | Hover (icon) --- */
+.container__section-section-desktop-aside-div__bottom-a:hover .container__section-section-desktop-aside-div__bottom-a-span,
+.container__section-section-desktop-aside-div__bottom-a:hover .container__section-section-desktop-aside-div__bottom-a-p {
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-hover-icon-text));
+}
+
+
+/* --- Panel buttons div a selected (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a-selected {
+    width: 100%;
+    height: 50%;
+    max-height: 65px;
+
+    background-color: var(--bg-middle-button-selected);
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+/* --- Panel buttons div a selected icon (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a-selected .container__section-section-desktop-aside-div__bottom-a-span {
+    color: var(--bg-middle-button-blue-text);
+
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-icon));
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 430,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+/* --- Panel buttons div a selected text (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a-selected .container__section-section-desktop-aside-div__bottom-a-p {
+    color: var(--bg-middle-button-blue-text);
+
+    filter: drop-shadow(0 0 10px var(--bg-middle-button-blue-hover-icon-text));
+}
+
+
+/* --- Panel buttons div a span (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a-span {
+    margin: 20px 20px 20px 35px;
+
+    color: var(--bg-middle-button-blue-icon);
+}
+
+/* --- Panel buttons div a text (bottom) --- */
+.container__section-section-desktop-aside-div__bottom-a-p {
+    color: var(--bg-middle-button-blue-text);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 17px;
+
+    text-align: left;
+}
+
+/* --- Panel buttons div a span responsive --- */
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+
+    /* --- Panel buttons div a (bottom) --- */
+    .container__section-section-desktop-aside-div__bottom-a-span {
+        margin: 15px 15px 15px 26px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-section-desktop-aside-div__bottom-a-p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    /* --- Panel buttons div a (bottom) --- */
+    .container__section-section-desktop-aside-div__bottom-a-span {
+        margin: 10px 10px 10px 18px;
+    }
+
+    /* --- Panel buttons div a (text) --- */
+    .container__section-section-desktop-aside-div__bottom-a-p {
+        font-size: 11px;
+    }
+}
+
+
+/* --- Task container (desktop version) --- */
+.container__section-section-desktop-div-container__task {
+    padding: 15px;
+
+    min-width: 400px;
+    max-width: var(--container__section-section-desktop-div-container__task-max-width);
+    max-height: var(--container__section-section-desktop-div-container__task-max-height);
+
+    box-sizing: var(--container__section-section-desktop-div-container__task-box-sizing);
+}
+
+
+/* --- Task (desktop version) --- */
+.container__section-section-desktop-div-container__task-task {
+    width: 100%;
+    max-height: 235px;
+
+    background-image: linear-gradient(to bottom, var(--bg-task-gradient-start), var(--bg-task-gradient-end));
+
+    border: 2px solid var(--b-color);
+    border-radius: 15px;
+
+    box-sizing: content-box;
+}
+
+/* --- Task | Hover (desktop version) --- */
+.container__section-section-desktop-div-container__task-task:hover {
+    border: 2px solid var(--task-content-border);
+
+    filter: drop-shadow(0 0 7px var(--task-content-light));
+}
+
+
+/* --- Task top (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__top {
+    width: 100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+/* --- Task top icon (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__top-span {
+    margin: 20px;
+
+    color: var(--general-icon);
+
+    filter: drop-shadow(0 0 7px var(--general-icon-light));
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+
+/* --- Task top text (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__top-h1 {
+    margin: 20px 20px 20px 0;
+
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+
+    flex-grow: 1;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    display: block;
+
+    filter: drop-shadow(0 0 3px var(--general-font-light));
+}
+
+
+/* --- Task middle (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__middle {
+    width: 100%;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Task middle text (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__middle-p {
+    margin: 0 20px;
+
+    color: var(--general-font-2);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: left;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+/* --- Task bottom (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom {
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: content-box;
+}
+
+
+/* --- Task bottom left container (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-left__container {
+    width: 70%;
+}
+
+
+/* --- Task bottom left container text (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-left__container-p {
+    color: var(--general-font);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    filter: drop-shadow(0 0 3px var(--general-font-light-2));
+}
+
+
+/* --- Task bottom right container (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container {
+    width: 30%;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+/* --- Task bottom right container text pending (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending {
+    padding-right: 10px;
+
+    color: #868686;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(134, 134, 134, 0.75));
+}
+
+
+/* --- Task bottom right container text delete (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete {
+    padding-right: 10px;
+
+    color: #b20b0b;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(178, 11, 11, 0.75));
+}
+
+
+/* --- Task bottom right container text done (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-done {
+    padding-right: 10px;
+
+    color: #0bb27a;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    font-size: 15px;
+
+    text-align: right;
+
+    filter: drop-shadow(0 0 5px rgba(11, 178, 122, 0.75));
+}
+
+
+/* --- Task bottom right container box pending (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending {
+    background-color: #666;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px hsla(160, 0%, 37%, 0.5));
+}
+
+
+/* --- Task bottom right container box delete (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete {
+    background-color: #b20b0b;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px rgba(178, 11, 11, 0.5));
+}
+
+
+/* --- Task bottom right container box done (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done {
+    background-color: #0bb27a;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+
+    box-sizing: border-box;
+
+    filter: drop-shadow(0 0 5px rgba(11, 178, 122, 0.5));
+}
+
+
+/* --- Task bottom right container box (general status) icon (desktop version) --- */
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span,
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span,
+.container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done-span {
+    color: #fff;
+
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 20
+}

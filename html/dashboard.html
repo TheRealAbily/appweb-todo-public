@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <!-- Title -->
+    <title>Dashboard</title>
+
+    <!-- Reference links -->
+    <link rel='stylesheet' href='../resoruces/styles/dashboard_style.css'>
+    <link rel='icon' href='../resoruces/images/icon.ico' type='image/x-span'>
+    <link
+        href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap'
+        rel='stylesheet'>
+    <link rel='stylesheet'
+        href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
+
+    <!-- JavaScript -->
+    <script src='../resoruces/javascripts/floating_buttons.js' defer></script>
+    <script src='../resoruces/javascripts/panel_buttons.js' defer></script>
+
+    <!-- Meta's -->
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Main container (desktop version) -->
+    <section class='container__section-desktop'>
+        <!-- Side panel / Panel tasks (desktop version) -->
+        <section class='container__section-section-desktop'>
+            <!-- Side panel (desktop version) -->
+            <aside class='container__section-section-desktop-aside'>
+                <div class='container__section-section-desktop-aside-div__top'>
+                    <img class='container__section-section-desktop-aside-div__top-img' alt='logo'
+                        src='../resoruces/images/logo.png'>
+                    <h1 class='container__section-section-desktop-aside-div__top-h1'>ToDo AppWeb</h1>
+                </div>
+
+                <div class='container__section-section-desktop-aside-div__middle'>
+                    <!-- Dashboard button -->
+                    <a class='container__section-section-desktop-aside-div__middle-a-selected' id='dashboard'>
+                        <span
+                            class='container__section-section-desktop-aside-div__middle-a-span material-symbols-outlined'>dashboard</span>
+                        <p class='container__section-section-desktop-aside-div__middle-a-p'>Dashboard</p>
+                    </a>
+
+                    <!-- Completed tasks -->
+                    <a class='container__section-section-desktop-aside-div__middle-a' id='completed-tasks'>
+                        <span
+                            class='container__section-section-desktop-aside-div__middle-a-span material-symbols-outlined'>task</span>
+                        <p class='container__section-section-desktop-aside-div__middle-a-p'>Completed tasks</p>
+                    </a>
+
+                    <!-- Tasks history button -->
+                    <a class='container__section-section-desktop-aside-div__middle-a' id='tasks-history'>
+                        <span
+                            class='container__section-section-desktop-aside-div__middle-a-span material-symbols-outlined'>schedule</span>
+                        <p class='container__section-section-desktop-aside-div__middle-a-p'>Tasks history</p>
+                    </a>
+
+                    <!-- Delete tasks button -->
+                    <a class='container__section-section-desktop-aside-div__middle-a' id='deleted-tasks'>
+                        <span
+                            class='container__section-section-desktop-aside-div__middle-a-span material-symbols-outlined'>delete</span>
+                        <p class='container__section-section-desktop-aside-div__middle-a-p'>Deleted tasks</p>
+                    </a>
+                </div>
+
+                <div class='container__section-section-desktop-aside-div__bottom'>
+                    <!-- Log out -->
+                    <a class='container__section-section-desktop-aside-div__bottom-a' id='log-out' href='sign_in.html'>
+                        <span
+                            class='container__section-section-desktop-aside-div__bottom-a-span material-symbols-outlined'>door_open</span>
+                        <p class='container__section-section-desktop-aside-div__bottom-a-p'>Log out</p>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Panel tasks (desktop version) -->
+            <div class='container__section-section-desktop-div' id='container-tasks-desktop'>
+                <!-- Tasks -->
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Delete -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                descriptionasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Done -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-done'>
+                                    Done</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Delete -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                descriptionasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Done -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-done'>
+                                    Done</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Delete -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Delete -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                descriptionasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                <!-- Done -->
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-done'>
+                                    Done</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button (desktop version) -->
+        <button class='container__section-button__add-task-desktop' id='button__add-task-desktop'><span
+                class='container__section-button__add-task-desktop-span material-symbols-outlined'>add</span></button>
+
+        <!-- Button theme (desktop version) -->
+        <button class='container__section-button__theme-desktop' id='button__theme-desktop'><span
+                class='container__section-button__theme-desktop-span button__theme-desktop-icon material-symbols-outlined'
+                id='button__theme-desktop-icon'>routine</span></button>
+
+        <!-- Button layout (desktop version) -->
+        <button class='container__section-button__layout-desktop' id='button__layout-desktop'><span
+                class='container__section-button__layout-desktop-span material-symbols-outlined'
+                id='button__layout-desktop-icon'>splitscreen</span></button>
+    </section>
+
+    <!-- Main container (mobile version) -->
+    <section class='container__section-mobile'>
+        <!-- Header (mobile version) -->
+        <header class='container__section-mobile-header'>
+            <img class='container__section-mobile-header-img' alt='logo' src='../resoruces/images/logo.png'>
+            <h1 class='container__section-mobile-header-h1'>ToDo AppWeb</h1>
+        </header>
+
+        <!-- Side panel / Panel tasks (mobile version) -->
+        <section class='container__section-section-mobile'>
+            <!-- Side panel (mobile version) -->
+            <aside class='container__section-section-mobile-aside'>
+                <div class='container__section-section-mobile-aside-div' id='button-show-panel'>
+                    <span class='container__section-section-mobile-aside-div-span material-symbols-outlined'>menu</span>
+                </div>
+            </aside>
+
+            <!-- Panel tasks (mobile version) -->
+            <div class='container__section-section-mobile-div' id='container-tasks-mobile'>
+                <!-- Tasks -->
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas magni tempora
+                                ipsum dolor quam mollitia exercitationem consequatur saepe provident nobis, quibusdam
+                                rem sint aperiam eaque doloremque placeat facilis nostrum illo. Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Eos perferendis quisquam minus consequatur ipsam
+                                magnam quia dolorem, ab rerum nemo aliquam maiores delectus velit deleniti molestias
+                                excepturi minima, cum molestiae! Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Minus alias delectus excepturi? Est provident repellendus totam molestias sequi
+                                rem vitae ad perferendis saepe, facere error officiis esse aspernatur libero unde.</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorbo
+                                assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                descriptionasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas magni tempora
+                                ipsum dolor quam mollitia exercitationem consequatur saepe provident nobis, quibusdam
+                                rem sint aperiam eaque doloremque placeat facilis nostrum illo. Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Eos perferendis quisquam minus consequatur ipsam
+                                magnam quia dolorem, ab rerum nemo aliquam maiores delectus velit deleniti molestias
+                                excepturi minima, cum molestiae! Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Minus alias delectus excepturi? Est provident repellendus totam molestias sequi
+                                rem vitae ad perferendis saepe, facere error officiis esse aspernatur libero unde.</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorbo
+                                assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Placeat vero corporis sequi ad
+                                aperiam, quibusdam omnis. Eius molestias, repellat voluptatum harum magnam adipisci,
+                                officia laboriosam aspernatur rem explicabo cum vitae. Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit. Consequatur explicabo at autem sapiente tenetur aliquid,
+                                iusto a libero cupiditate perferendis omnis modi excepturi voluptatum mollitia fugiat
+                                beatae dicta. Consectetur, magnam? Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Corrupti distinctio sit aliquid explicabo assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas magni tempora
+                                ipsum dolor quam mollitia exercitationem consequatur saepe provident nobis, quibusdam
+                                rem sint aperiam eaque doloremque placeat facilis nostrum illo. Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Eos perferendis quisquam minus consequatur ipsam
+                                magnam quia dolorem, ab rerum nemo aliquam maiores delectus velit deleniti molestias
+                                excepturi minima, cum molestiae! Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Minus alias delectus excepturi? Est provident repellendus totam molestias sequi
+                                rem vitae ad perferendis saepe, facere error officiis esse aspernatur libero unde.</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        <!-- Title task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit. Nulla, aperiam. Mollitia, quibusdam
+                                commodi laborum natus numquam fuga. Magni ratione nesciunt, nostrum ut, dicta expedita
+                                dolores voluptate aperiam commodi ad voluptas? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestiae consequuntur obcaecati ullam molestias accusamus tenetur,
+                                consectetur dolorum quam, voluptas provident incidunt totam, delectus saepe temporibus.
+                                Quisquam deleniti soluta consequuntur accusamus.</h1>
+                        </div>
+
+                        <!-- Description task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Lorbo
+                                assumenda in architecto culpa id maxime
+                                laboriosam, rem officiis expedita mollitia minus ad natus nam alias dolor?</p>
+                        </div>
+
+                        <!-- Date/Status task -->
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            <!-- Date -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            <!-- Status task -->
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                <!-- Pending -->
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel buttons background (mobile version) -->
+        <section class='container__section-mobile-section__background__hide' id='container-panel-background'></section>
+
+        <!-- Panel buttons (mobile version) -->
+        <section class='container__section-mobile-section__hide' id='container-panel'>
+            <div class='container__section-mobile-section-div'>
+                <div class='container__section-mobile-section-div-div__top'>
+                    <img class='container__section-mobile-section-div-div__top-img' alt='logo'
+                        src='../resoruces/images/logo.png'>
+                    <h1 class='container__section-mobile-section-div-div__top-h1'>ToDo AppWeb</h1>
+                </div>
+
+                <div class='container__section-mobile-section-div-div__middle'>
+                    <!-- Dashboard button -->
+                    <a class='container__section-mobile-section-div-div__middle-a-selected' id='dashboard'>
+                        <span
+                            class='container__section-mobile-section-div-div__middle-a-span material-symbols-outlined'>dashboard</span>
+                        <p class='container__section-mobile-section-div-div__middle-a-p'>Dashboard</p>
+                    </a>
+
+                    <!-- Completed tasks -->
+                    <a class='container__section-mobile-section-div-div__middle-a' id='completed-tasks'>
+                        <span
+                            class='container__section-mobile-section-div-div__middle-a-span material-symbols-outlined'>task</span>
+                        <p class='container__section-mobile-section-div-div__middle-a-p'>Completed tasks</p>
+                    </a>
+
+                    <!-- Tasks history button -->
+                    <a class='container__section-mobile-section-div-div__middle-a' id='tasks-history'>
+                        <span
+                            class='container__section-mobile-section-div-div__middle-a-span material-symbols-outlined'>schedule</span>
+                        <p class='container__section-mobile-section-div-div__middle-a-p'>Tasks history</p>
+                    </a>
+
+                    <!-- Delete tasks button -->
+                    <a class='container__section-mobile-section-div-div__middle-a' id='deleted-tasks'>
+                        <span
+                            class='container__section-mobile-section-div-div__middle-a-span material-symbols-outlined'>delete</span>
+                        <p class='container__section-mobile-section-div-div__middle-a-p'>Deleted tasks</p>
+                    </a>
+                </div>
+
+                <div class='container__section-mobile-section-div-div__bottom'>
+                    <!-- Log out -->
+                    <a class='container__section-mobile-section-div-div__bottom-a' id='log-out' href='sign_in.html'>
+                        <span
+                            class='container__section-mobile-section-div-div__bottom-a-span material-symbols-outlined'>door_open</span>
+                        <p class='container__section-mobile-section-div-div__bottom-a-p'>Log out</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button (mobile version) -->
+        <button class='container__section-button__add-task-mobile' id='button__add-task-mobile'><span
+                class='container__section-button__add-task-mobile-span material-symbols-outlined'>add</span></button>
+
+        <!-- Button theme (mobile version) -->
+        <button class='container__section-button__theme-mobile' id='button__theme-mobile'><span
+                class='container__section-button__theme-mobile-span button__theme-mobile-icon material-symbols-outlined'
+                id='button__theme-mobile-icon'>routine</span></button>
+    </section>
+
+    <!-- Footer -->
+    <footer class='container__footer'>
+        <p class='container__footer-p container__footer-p-right'><strong>Desarrolladores:</strong></p>
+        <p class='container__footer-p'>Jesús Villavicencio y José Hidalgo</p>
+        <p class='container__footer-p container__footer-p-right'><strong>Usando las tecnologías de:</strong></p>
+        <p class='container__footer-p'>HTML, CSS, JavaScript y Laravel</p>
+        <p class='container__footer-p container__footer-p-right'><strong>Fecha de creación:</strong></p>
+        <p class='container__footer-p'>2024</p>
+    </footer>
+</body>
+
+<!-- Tasks template (mobile version) --
+<div class='container__section-section-mobile-div-container__task'>
+                    <div class='container__section-section-mobile-div-container__task-task'>
+                        !-- Title task --
+                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        !-- Description task --
+                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        !-- Date/Status task --
+                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                            !-- Date --
+                            <div class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                                <p class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            !-- Status task --
+                            <div
+                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                                !-- Pending --
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                                
+                                !-- Delete --
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                                
+                                !-- Done --
+                                <p
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-done'>
+                                    Done</p>
+                                <span
+                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-done'><span
+                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-done-span material-symbols-outlined'>
+                                        check
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+-- Tasks template (desktop version) --
+<div class='container__section-section-desktop-div-container__task'>
+                    <div class='container__section-section-desktop-div-container__task-task'>
+                        !-- Title task --
+                        <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                            <span
+                                class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                                sticky_note_2
+                            </span>
+                            <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>Task
+                                title</h1>
+                        </div>
+
+                        !-- Description task --
+                        <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>Task
+                                description</p>
+                        </div>
+
+                        !-- Date/Status task --
+                        <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                            !-- Date --
+                            <div class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                                <p class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                                    Created on: ####-##-##</p>
+                            </div>
+
+                            !-- Status task --
+                            <div
+                                class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                                !-- Pending --
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending'>
+                                    Pending</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
+                                        schedule
+                                    </span></span>
+                                
+                                !-- Delete --
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-delete'>
+                                    Delete</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-delete-span material-symbols-outlined'>
+                                        close
+                                    </span></span>
+                                
+                                !-- Done --
+                                <p
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-done'>
+                                    Done</p>
+                                <span
+                                    class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done'><span
+                                        class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-done-span material-symbols-outlined'>
+                                        check
+                                    </span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
