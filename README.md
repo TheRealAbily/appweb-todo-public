@@ -13,7 +13,7 @@ ToDo Web Application Frontend Repository
 
 ## Uso
 
-<div style="background-color: #e6f7ff; border: 1px solid #99d6ff; padding: 10px;">
+<div style="background-color: #f00; border: 1px solid #99d6ff; padding: 10px;">
 <h3>Ejemplo de Uso</h3>
 Aquí puedes explicar cómo utilizar el proyecto. Proporciona ejemplos de comandos o código.
 </div>
