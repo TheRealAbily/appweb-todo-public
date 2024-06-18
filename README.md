@@ -1,11 +1,16 @@
-# AppWeb ToDo
+## AppWeb ToDo
 
 The ToDo App is a simple and effective tool to manage your daily tasks. It allows users to create, organize and mark tasks as completed, providing an intuitive and easy-to-use experience.
 
+---
 
 # Main features
 
+***
+
 **Task creation:** Add new tasks with ease, assigning titles and descriptions as needed.
+
+___
 
 **Mark tasks completed:** Mark tasks as completed when you're done with them to keep a clear record of your progress.
 
