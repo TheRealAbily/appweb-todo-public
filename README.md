@@ -48,4 +48,4 @@ Storing tasks per device.
 
 # Version
 
-Currently the page is in version 1.0.0.
+Currently the page is in version 1.0.0
