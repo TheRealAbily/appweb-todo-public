@@ -62,7 +62,7 @@ function set_theme(selected) {
             document.documentElement.style.setProperty('--bg-button-floating-hover', '#4C607B');
             document.documentElement.style.setProperty('--bg-button-floating-icon-hover-light', '#fff');
             document.documentElement.style.setProperty('--bg-button-floating-border', '#fff');
-            document.documentElement.style.setProperty('--bg-button-floating-shado', ' 00000080');
+            document.documentElement.style.setProperty('--bg-button-floating-shadow', ' 00000080');
 
             /* --- Footer --- */
             document.documentElement.style.setProperty('--bg-footer', '#0d0f13');
@@ -135,7 +135,7 @@ function set_theme(selected) {
             document.documentElement.style.setProperty('--bg-button-floating-hover', '#4C607B');
             document.documentElement.style.setProperty('--bg-button-floating-icon-hover-light', '#fff');
             document.documentElement.style.setProperty('--bg-button-floating-border', '#fff');
-            document.documentElement.style.setProperty('--bg-button-floating-shado', ' 00000080');
+            document.documentElement.style.setProperty('--bg-button-floating-shadow', ' 00000080');
 
             /* --- Footer --- */
             document.documentElement.style.setProperty('--bg-footer', '#0d0f13');
