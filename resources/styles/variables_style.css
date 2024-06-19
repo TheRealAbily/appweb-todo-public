@@ -77,7 +77,7 @@
 
     --container__section-section-desktop-div-justify-content: initial;
     --container__section-section-desktop-div-align-items: initial;
-    --show-button__theme: 1;
+    --show-button__theme: 0;
 
     /* --- Animations --- */
     --time-anim-shake: 0.45s;
