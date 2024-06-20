@@ -99,7 +99,7 @@ body::-webkit-scrollbar-thumb:hover {
 .content__middle-background {
     margin: 0 auto;
 
-    background-color: var(--mbg-color);
+    background-image: linear-gradient(to bottom, var(--bg-task-gradient-start), var(--bg-task-gradient-end));
 
     width: 80%;
     max-width: 280px;
