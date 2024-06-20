@@ -1,4 +1,4 @@
-// Wait for the document to load:
+a// Wait for the document to load:
 document.addEventListener('DOMContentLoaded', (event) => {
     // Variables:
     var layout = 'inline';
