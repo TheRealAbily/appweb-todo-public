@@ -1,4 +1,4 @@
-a// Const vars:
+// Const vars:
 const path = window.location.pathname;
 const name_file = path.substring(path.lastIndexOf('/') + 1);
 const form = document.getElementById('form');
