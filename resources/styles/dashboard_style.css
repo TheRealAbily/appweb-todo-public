@@ -717,12 +717,6 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: var(--bg-middle-button-hover);
 }
 
-/* --- Panel buttons div a (middle) | Hover (icon) --- */
-.container__section-mobile-section-div-div__middle-a:hover .container__section-mobile-section-div-div__middle-a-span,
-.container__section-mobile-section-div-div__middle-a:hover .container__section-mobile-section-div-div__middle-a-p {
-    background-color: var(--bg-middle-button-hover-icon);
-}
-
 
 /* --- Panel buttons div a selected (middle) --- */
 .container__section-mobile-section-div-div__middle-a-selected {
