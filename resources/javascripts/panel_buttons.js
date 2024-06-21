@@ -107,7 +107,7 @@ function show_tasks(type) {
     const panelDesktop = document.getElementById('container-tasks-desktop');
     const panelMobile = document.getElementById('container-tasks-mobile');
 
-    // Delete old tasks:
+    // Clear tags:
     panelDesktop.innerHTML = ``;
     panelMobile.innerHTML = ``;
 
