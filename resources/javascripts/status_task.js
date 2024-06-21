@@ -1,91 +1,3 @@
-// Status button --------------------------------------------------------------------------------------------------
-
-// Get the status button:
-const buttonStatus = document.querySelectorAll('span');
-
-// Possible States:
-const possibleStatesButton = ['status-pending-button', 'status-pending-button-active',
-    'status-delete-button', 'status-delete-button-active',
-    'status-done-button', 'status-done-button-active'];
-const possibleStatesIcons = ['status-pending-icon', 'status-pending-icon-active',
-    'status-delete-icon', 'status-delete-icon-active',
-    'status-done-icon', 'status-done-icon-active'];
-
-// Filter:
-buttonStatus.forEach(button => {
-    const hasState = possibleStatesButton.some(state => button.classList.contains(state));
-
-    if (hasState) {
-        button.addEventListener('click', () => {
-            // Pending button:
-            if (button.classList.contains('button-pending')) {
-                if (button.classList.contains('status-pending-button')) {
-                    button.classList.remove('status-pending-button');
-                    button.classList.add('status-pending-button-active');
-
-                    buttonStatus.forEach(buttonNotClicked => {
-                        // Delete:
-                        if (buttonNotClicked.classList.contains('status-delete-button-active')) {
-                            buttonNotClicked.classList.remove('status-delete-button-active');
-                            buttonNotClicked.classList.add('status-delete-button');
-                        }
-
-                        // Done:
-                        if (buttonNotClicked.classList.contains('status-done-button-active')) {
-                            buttonNotClicked.classList.remove('status-done-button-active');
-                            buttonNotClicked.classList.add('status-done-button');
-                        }
-                    });
-                }
-            }
-
-            // Delete button:
-            if (button.classList.contains('button-delete')) {
-                if (button.classList.contains('status-delete-button')) {
-                    button.classList.remove('status-delete-button');
-                    button.classList.add('status-delete-button-active');
-
-                    buttonStatus.forEach(buttonNotClicked => {
-                        // Pending:
-                        if (buttonNotClicked.classList.contains('status-pending-button-active')) {
-                            buttonNotClicked.classList.remove('status-pending-button-active');
-                            buttonNotClicked.classList.add('status-pending-button');
-                        }
-
-                        // Done:
-                        if (buttonNotClicked.classList.contains('status-done-button-active')) {
-                            buttonNotClicked.classList.remove('status-done-button-active');
-                            buttonNotClicked.classList.add('status-done-button');
-                        }
-                    });
-                }
-            }
-
-            // Done button:
-            if (button.classList.contains('button-done')) {
-                if (button.classList.contains('status-done-button')) {
-                    button.classList.remove('status-done-button');
-                    button.classList.add('status-done-button-active');
-
-                    buttonStatus.forEach(buttonNotClicked => {
-                        // Delete:
-                        if (buttonNotClicked.classList.contains('status-delete-button-active')) {
-                            buttonNotClicked.classList.remove('status-delete-button-active');
-                            buttonNotClicked.classList.add('status-delete-button');
-                        }
-
-                        // Pending:
-                        if (buttonNotClicked.classList.contains('status-pending-button-active')) {
-                            buttonNotClicked.classList.remove('status-pending-button-active');
-                            buttonNotClicked.classList.add('status-pending-button');
-                        }
-                    });
-                }
-            }
-        })
-    }
-});
-
 // Firts load -----------------------------------------------------------------------------------------------------
 
 // Firts state of the confirm button:
@@ -99,16 +11,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Check:
     if (title.value.trim() === '' || description.value.trim() === '') {
-        if (button.classList.contains('mcb-footer-content-right-button')) {
-            button.classList.remove('mcb-footer-content-right-button');
+        if (button.classList.contains('mcb-footer-content-button')) {
+            button.classList.remove('mcb-footer-content-button');
         }
-        button.classList.add('mcb-footer-content-right-invalid-button');
+        button.classList.add('mcb-footer-content-invalid-button');
     }
     else {
-        if (button.classList.contains('mcb-footer-content-right-invalid-button')) {
-            button.classList.remove('mcb-footer-content-right-invalid-button');
+        if (button.classList.contains('mcb-footer-content-invalid-button')) {
+            button.classList.remove('mcb-footer-content-invalid-button');
         }
-        button.classList.add('mcb-footer-content-right-button');
+        button.classList.add('mcb-footer-content-button');
     }
 });
 
@@ -168,8 +80,8 @@ form.addEventListener('submit', function (event) {
             });
     }
     else {
-        button.classList.remove('mcb-footer-content-right-button');
-        button.classList.add('mcb-footer-content-right-invalid-button');
+        button.classList.remove('mcb-footer-content-button');
+        button.classList.add('mcb-footer-content-invalid-button');
 
         firtsTime = true;
 
@@ -214,12 +126,12 @@ function checkInputs() {
 
     // Check:
     if (titleValue && descriptionValue) {
-        button.classList.remove('mcb-footer-content-right-invalid-button');
-        button.classList.add('mcb-footer-content-right-button');
+        button.classList.remove('mcb-footer-content-invalid-button');
+        button.classList.add('mcb-footer-content-button');
     }
     else {
-        button.classList.remove('mcb-footer-content-right-button');
-        button.classList.add('mcb-footer-content-right-invalid-button');
+        button.classList.remove('mcb-footer-content-button');
+        button.classList.add('mcb-footer-content-invalid-button');
     }
 
     // Firts error:

@@ -454,147 +454,6 @@ body {
     align-items: center;
 }
 
-.mcb-footer-content-left {
-    width: 50%;
-    height: 100%;
-}
-
-.mcb-footer-content-left-text {
-    margin: 10px 0;
-
-    min-width: 100%;
-
-    color: var(--general-font);
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 430;
-    font-size: var(--g-font-size);
-    font-style: bold;
-
-    box-sizing: border-box;
-
-    box-sizing: content-box;
-}
-
-/* --- Content left (status) --- */
-.mcb-footer-content-left-status {
-    margin: 10px 0;
-
-    min-width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    box-sizing: content-box;
-}
-
-/* --- Status buttons (text) --- */
-.mcb-footer-content-left-status-text {
-    margin: 5px 0;
-
-    height: 20px;
-
-    color: var(--status-text);
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 430;
-    font-size: var(--g-font-size);
-    font-style: bold;
-
-    text-align: left;
-
-    display: flex;
-    align-items: center;
-
-    box-sizing: border-box;
-
-}
-
-/* --- Text and status (text and button) */
-.mcb-footer-content-left-status-n-text {
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-}
-
-/* --- Status buttons (button) --- */
-.mcb-footer-content-left-status-button {
-    margin: 5px 18px;
-
-    width: 25px;
-    height: 25px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 3px;
-
-    box-sizing: border-box;
-}
-
-.mcb-footer-content-left-status-button-icon {
-    color: transparent
-}
-
-/* --- Pending button (desactive) --- */
-.status-pending-button {
-    border: 2px solid #666;
-
-    filter: drop-shadow(0 0 0 transparent);
-}
-
-/* --- Pending button (active) --- */
-.status-pending-button-active {
-    background-color: #666;
-
-    filter: drop-shadow(0 0 5px hsla(160, 0%, 37%, 0.5));
-}
-
-/* --- Delete button (desactive) --- */
-.status-delete-button {
-    border: 2px solid #b20b0b;
-
-    filter: drop-shadow(0 0 0 transparent);
-}
-
-/* --- Delete button (active) --- */
-.status-delete-button-active {
-    background-color: #b20b0b;
-
-    filter: drop-shadow(0 0 5px rgba(178, 11, 11, 0.5));
-}
-
-/* --- Done button (desactive) --- */
-.status-done-button {
-    border: 2px solid #0bb27a;
-
-    filter: drop-shadow(0 0 0 transparent);
-}
-
-/* --- Done button (active) --- */
-.status-done-button-active {
-    background-color: #0bb27a;
-
-    filter: drop-shadow(0 0 5px rgba(11, 178, 122, 0.5));
-}
-
-/* --- Pending, delete, done icon (desactive) --- */
-.status-pending-button span,
-.status-delete-button span,
-.status-done-button span {
-    color: transparent;
-}
-
-/* --- Pending, delete, done icon (active) --- */
-.status-pending-button-active span,
-.status-delete-button-active span,
-.status-done-button-active span {
-    color: #fff;
-}
-
 /* --- Class icon --- */
 .material-symbols-outlined {
     font-variation-settings:
@@ -604,21 +463,15 @@ body {
         'opsz' 20
 }
 
-/* --- Content right (confirm) --- */
-.mcb-footer-content-right {
-    width: 50%;
-    min-height: 100%;
-}
-
 /* --- Task confirm (button) --- */
-.mcb-footer-content-right-button {
+.mcb-footer-content-button {
     transition: border 0.25s ease;
     transition: box-shadow 0.25s ease;
 
     margin: 20px auto;
     padding: 7px;
 
-    width: 88%;
+    width: 100%;
     height: 37px;
 
     background-color: #104666;
@@ -643,28 +496,28 @@ body {
     z-index: 20;
 }
 
-.mcb-footer-content-right-button:hover {
+.mcb-footer-content-button:hover {
     background-color: #195d85;
     color: #fff;
 
     box-shadow: 0px 0px 10px rgba(31, 102, 143, 0.55);
 }
 
-.mcb-footer-content-right-button:active {
+.mcb-footer-content-button:active {
     background-color: #2675a3;
     color: #fff;
 
     box-shadow: 0px 0px 10px rgba(37, 114, 160, 0.7);
 }
 
-.mcb-footer-content-right-invalid-button {
+.mcb-footer-content-invalid-button {
     transition: border 0.25s ease;
     transition: box-shadow 0.25s ease;
 
     margin: 20px auto;
     padding: 7px;
 
-    width: 88%;
+    width: 100%;
     height: 37px;
 
     background-color: #0a2230;
@@ -689,29 +542,14 @@ body {
     z-index: 20;
 }
 
-.mcb-footer-content-right-invalid-button:hover {
+.mcb-footer-content-invalid-button:hover {
     animation: shake-2 var(--time-anim-shake) var(--type-anim);
 }
 
 @media screen and (min-width: 601px) and (max-width: 850px) {
-    .mcb-footer-content {
-        flex-direction: column;
-    }
 
-    .mcb-footer-content-left {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right-button,
-    .mcb-footer-content-right-invalid-button {
+    .mcb-footer-content-button,
+    .mcb-footer-content-invalid-button {
         width: 100%;
 
         margin: 20px 0;
@@ -719,24 +557,9 @@ body {
 }
 
 @media screen and (min-width: 501px) and (max-width: 600px) {
-    .mcb-footer-content {
-        flex-direction: column;
-    }
 
-    .mcb-footer-content-left {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right-button,
-    .mcb-footer-content-right-invalid-button {
+    .mcb-footer-content-button,
+    .mcb-footer-content-invalid-button {
         width: 100%;
 
         margin: 20px 0;
@@ -748,53 +571,16 @@ body {
         padding: 8px 20px;
     }
 
-    .mcb-footer-content-left-text {
-        margin: 5px 0;
-    }
-
-    .mcb-footer-content {
-        flex-direction: column;
-    }
-
-    .mcb-footer-content-left {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right {
-        width: 100%;
-
-        display: block;
-    }
-
-    .mcb-footer-content-right-button,
-    .mcb-footer-content-right-invalid-button {
+    .mcb-footer-content-button,
+    .mcb-footer-content-invalid-button {
         width: 100%;
 
         margin: 10px 0;
     }
-
-    .mcb-footer-content-left-status-text {
-        padding-top: 2px;
-    }
-
-    .mcb-footer-content-left-status-button {
-        margin: 5px 10px;
-    }
 }
 
 @media screen and (max-width: 300px) {
-    .mcb-footer-content-left-text {
-        font-size: 10px;
-    }
-
-    .mcb-footer-content-left-status-text {
-        font-size: 10px;
-    }
-
-    .mcb-footer-content-right-button,
-    .mcb-footer-content-right-invalid-button {
+    .mcb-footer-content-button {
         font-size: 12px;
     }
 }
