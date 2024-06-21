@@ -109,6 +109,24 @@ const renderTasks = (tasks, status) => {
 
     tasks.forEach(task => {
         if (task.status == status || status == 'all') {
+            // Icon:
+            switch (task.status) {
+                case 'pending': {
+                    var icon = 'schedule';
+                    break;
+                }
+
+                case 'done': {
+                    var icon = 'check';
+                    break;
+                }
+
+                case 'deleted': {
+                    var icon = 'close';
+                    break;
+                }
+            }
+
             // Tasks for desktop version:
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
@@ -134,9 +152,7 @@ const renderTasks = (tasks, status) => {
                             ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
                         </p>
                         <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
-                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
-                                schedule
-                            </span>
+                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
                     </div>
                 </div>
@@ -170,9 +186,7 @@ const renderTasks = (tasks, status) => {
                             ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
                         </p>
                         <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
-                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
-                                schedule
-                            </span>
+                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
                     </div>
                 </div>
@@ -181,6 +195,16 @@ const renderTasks = (tasks, status) => {
             // Add the child:
             panelMobile.appendChild(mobileTaskElement);
         }
+    });
+
+    // Tasks (desktop & mobile version):
+    const task = document.querySelectorAll('section section div div div');
+
+    // Add the event (desktop & mobile version):
+    task.forEach(task => {
+        task.addEventListener('click', () => {
+            window.location.href = 'new_task.html';
+        });
     });
 };
 
@@ -222,23 +246,13 @@ function show_tasks(type) {
                 } break;
 
                 case 'deleted-tasks': {
-                    renderTasks(data, 'delete');
+                    renderTasks(data, 'deleted');
                 } break;
             }
         })
         .catch(error => {
             console.error('Error:', error);
         });
-
-    // Tasks (desktop & mobile version):
-    const task = document.querySelectorAll('section section div div div');
-
-    // Add the event (desktop & mobile version):
-    task.forEach(task => {
-        task.addEventListener('click', () => {
-            window.location.href = 'new_task.html';
-        });
-    });
 }
 
 // Firts load -----------------------------------------------------------------------------------------------------

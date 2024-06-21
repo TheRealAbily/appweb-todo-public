@@ -6,16 +6,17 @@ const panelMobile = document.getElementById('container-tasks-mobile');
 const url = 'http://127.0.0.1:8000/api/task';
 
 // Function to render tasks:
-const renderTasks = (tasks) => {
+const renderTasksInit = (tasks) => {
     // Clear the tags:
     panelDesktop.innerHTML = '';
     panelMobile.innerHTML = '';
 
     tasks.forEach(task => {
-        // Tasks for desktop version:
-        const desktopTaskElement = document.createElement('div');
-        desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
-        desktopTaskElement.innerHTML = `
+        if (task.status == 'pending') {
+            // Tasks for desktop version:
+            const desktopTaskElement = document.createElement('div');
+            desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
+            desktopTaskElement.innerHTML = `
             <div class='container__section-section-desktop-div-container__task-task'>
                 <div class='container__section-section-desktop-div-container__task-task-div__top'>
                     <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
@@ -33,26 +34,23 @@ const renderTasks = (tasks) => {
                         </p>
                     </div>
                     <div class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
-                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-${task.status}'>
-                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
+                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending'>
+                            Pending
                         </p>
-                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
-                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
-                                schedule
-                            </span>
+                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending'>
+                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>schedule</span>
                         </span>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
 
-        // Add the child:
-        panelDesktop.appendChild(desktopTaskElement);
+            // Add the child:
+            panelDesktop.appendChild(desktopTaskElement);
 
-        // Tasks for mobile version:
-        const mobileTaskElement = document.createElement('div');
-        mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
-        mobileTaskElement.innerHTML = `
+            // Tasks for mobile version:
+            const mobileTaskElement = document.createElement('div');
+            mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
+            mobileTaskElement.innerHTML = `
             <div class='container__section-section-mobile-div-container__task-task'>
                 <div class='container__section-section-mobile-div-container__task-task-div__top'>
                     <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
@@ -70,21 +68,29 @@ const renderTasks = (tasks) => {
                         </p>
                     </div>
                     <div class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-${task.status}'>
-                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
+                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
+                            Pending
                         </p>
-                        <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
-                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
-                                schedule
-                            </span>
+                        <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'>
+                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>schedule</span>
                         </span>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
 
-        // Add the child:
-        panelMobile.appendChild(mobileTaskElement);
+            // Add the child:
+            panelMobile.appendChild(mobileTaskElement);
+        }
+    });
+
+    // Tasks (desktop & mobile version):
+    const task = document.querySelectorAll('section section div div div');
+
+    // Add the event (desktop & mobile version):
+    task.forEach(task => {
+        task.addEventListener('click', () => {
+            window.location.href = 'new_task.html';
+        });
     });
 };
 
@@ -99,7 +105,7 @@ fetch(url)
     })
     .then(data => {
         // Render tasks to UI:
-        renderTasks(data);
+        renderTasksInit(data);
     })
     .catch(error => {
         console.error('Error:', error);
