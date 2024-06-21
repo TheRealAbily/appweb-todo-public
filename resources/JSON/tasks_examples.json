@@ -1,0 +1,362 @@
+[
+    {
+        "id": 1,
+        "group_id": 1,
+        "title": "Implement login functionality",
+        "description": "Implement user authentication and login functionality using JWT tokens.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T08:00:00.000000Z",
+        "updated_at": "2024-06-21T08:00:00.000000Z"
+    },
+    {
+        "id": 2,
+        "group_id": 1,
+        "title": "Design homepage layout",
+        "description": "Create wireframes and design mockups for the homepage UI.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T08:15:00.000000Z",
+        "updated_at": "2024-06-21T08:15:00.000000Z"
+    },
+    {
+        "id": 3,
+        "group_id": 1,
+        "title": "Fix database connection issue",
+        "description": "Investigate and resolve intermittent database connection errors.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T08:30:00.000000Z",
+        "updated_at": "2024-06-21T08:30:00.000000Z"
+    },
+    {
+        "id": 4,
+        "group_id": 1,
+        "title": "Update user profile page",
+        "description": "Enhance user profile page with new fields and better UI interactions.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T08:45:00.000000Z",
+        "updated_at": "2024-06-21T08:45:00.000000Z"
+    },
+    {
+        "id": 5,
+        "group_id": 1,
+        "title": "Implement search feature",
+        "description": "Develop search functionality to allow users to search for content across the platform.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T09:00:00.000000Z",
+        "updated_at": "2024-06-21T09:00:00.000000Z"
+    },
+    {
+        "id": 6,
+        "group_id": 1,
+        "title": "Refactor backend API endpoints",
+        "description": "Optimize and refactor existing backend API endpoints for improved performance and scalability.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T09:15:00.000000Z",
+        "updated_at": "2024-06-21T09:15:00.000000Z"
+    },
+    {
+        "id": 7,
+        "group_id": 1,
+        "title": "Create user onboarding flow",
+        "description": "Design and implement a smooth onboarding flow for new users to familiarize them with the platform.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T09:30:00.000000Z",
+        "updated_at": "2024-06-21T09:30:00.000000Z"
+    },
+    {
+        "id": 8,
+        "group_id": 1,
+        "title": "Fix UI alignment issues",
+        "description": "Resolve UI alignment problems reported in the user interface.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T09:45:00.000000Z",
+        "updated_at": "2024-06-21T09:45:00.000000Z"
+    },
+    {
+        "id": 9,
+        "group_id": 1,
+        "title": "Implement file upload feature",
+        "description": "Add functionality to allow users to upload files and attachments to their accounts.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T10:00:00.000000Z",
+        "updated_at": "2024-06-21T10:00:00.000000Z"
+    },
+    {
+        "id": 10,
+        "group_id": 1,
+        "title": "Optimize frontend performance",
+        "description": "Improve frontend loading times and reduce page load speed by optimizing assets and code.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T10:15:00.000000Z",
+        "updated_at": "2024-06-21T10:15:00.000000Z"
+    },
+    {
+        "id": 11,
+        "group_id": 1,
+        "title": "Fix broken link in footer",
+        "description": "Identify and fix a broken hyperlink in the footer section of the website.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T10:30:00.000000Z",
+        "updated_at": "2024-06-21T10:30:00.000000Z"
+    },
+    {
+        "id": 12,
+        "group_id": 1,
+        "title": "Add multi-language support",
+        "description": "Integrate localization features to support multiple languages across the platform.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T10:45:00.000000Z",
+        "updated_at": "2024-06-21T10:45:00.000000Z"
+    },
+    {
+        "id": 13,
+        "group_id": 1,
+        "title": "Implement forgot password flow",
+        "description": "Develop functionality to allow users to reset their passwords via email.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T11:00:00.000000Z",
+        "updated_at": "2024-06-21T11:00:00.000000Z"
+    },
+    {
+        "id": 14,
+        "group_id": 1,
+        "title": "Fix navigation menu responsiveness",
+        "description": "Ensure the navigation menu displays correctly on different screen sizes and devices.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T11:15:00.000000Z",
+        "updated_at": "2024-06-21T11:15:00.000000Z"
+    },
+    {
+        "id": 15,
+        "group_id": 1,
+        "title": "Update Terms of Service page",
+        "description": "Review and update the Terms of Service page with new legal requirements.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T11:30:00.000000Z",
+        "updated_at": "2024-06-21T11:30:00.000000Z"
+    },
+    {
+        "id": 16,
+        "group_id": 1,
+        "title": "Implement dark mode option",
+        "description": "Add a toggle option for users to switch between light and dark mode themes.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T11:45:00.000000Z",
+        "updated_at": "2024-06-21T11:45:00.000000Z"
+    },
+    {
+        "id": 17,
+        "group_id": 1,
+        "title": "Fix broken image links",
+        "description": "Identify and update broken image links throughout the website.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T12:00:00.000000Z",
+        "updated_at": "2024-06-21T12:00:00.000000Z"
+    },
+    {
+        "id": 18,
+        "group_id": 1,
+        "title": "Update error handling messages",
+        "description": "Revise error messages displayed to users for clarity and helpfulness.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T12:15:00.000000Z",
+        "updated_at": "2024-06-21T12:15:00.000000Z"
+    },
+    {
+        "id": 19,
+        "group_id": 1,
+        "title": "Fix bug causing login failures",
+        "description": "Investigate and resolve the bug causing intermittent login failures for users.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T08:00:00.000000Z",
+        "updated_at": "2024-06-21T08:00:00.000000Z"
+    },
+    {
+        "id": 20,
+        "group_id": 1,
+        "title": "Design new landing page layout",
+        "description": "Create wireframes and mockups for the new landing page design.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T08:15:00.000000Z",
+        "updated_at": "2024-06-21T08:15:00.000000Z"
+    },
+    {
+        "id": 21,
+        "group_id": 1,
+        "title": "Upgrade database to latest version",
+        "description": "Plan and execute database upgrade to ensure compatibility with new features.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T08:30:00.000000Z",
+        "updated_at": "2024-06-21T08:30:00.000000Z"
+    },
+    {
+        "id": 22,
+        "group_id": 1,
+        "title": "Implement user profile photo upload",
+        "description": "Enable users to upload and manage profile photos on their accounts.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T08:45:00.000000Z",
+        "updated_at": "2024-06-21T08:45:00.000000Z"
+    },
+    {
+        "id": 23,
+        "group_id": 1,
+        "title": "Deploy new API endpoints",
+        "description": "Prepare and deploy new API endpoints to support upcoming mobile app integration.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T09:00:00.000000Z",
+        "updated_at": "2024-06-21T09:00:00.000000Z"
+    },
+    {
+        "id": 24,
+        "group_id": 1,
+        "title": "Optimize frontend loading times",
+        "description": "Analyze and optimize frontend performance to reduce loading times and improve user experience.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T09:15:00.000000Z",
+        "updated_at": "2024-06-21T09:15:00.000000Z"
+    },
+    {
+        "id": 25,
+        "group_id": 1,
+        "title": "Create user onboarding tutorial",
+        "description": "Design and develop a comprehensive onboarding tutorial for new users.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T09:30:00.000000Z",
+        "updated_at": "2024-06-21T09:30:00.000000Z"
+    },
+    {
+        "id": 26,
+        "group_id": 1,
+        "title": "Fix UI responsiveness issues",
+        "description": "Identify and resolve UI responsiveness issues on mobile devices.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T09:45:00.000000Z",
+        "updated_at": "2024-06-21T09:45:00.000000Z"
+    },
+    {
+        "id": 27,
+        "group_id": 1,
+        "title": "Add multi-factor authentication",
+        "description": "Integrate multi-factor authentication (MFA) for enhanced security measures.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T10:00:00.000000Z",
+        "updated_at": "2024-06-21T10:00:00.000000Z"
+    },
+    {
+        "id": 28,
+        "group_id": 1,
+        "title": "Update payment gateway integration",
+        "description": "Update and test payment gateway integration to ensure seamless transactions.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T10:15:00.000000Z",
+        "updated_at": "2024-06-21T10:15:00.000000Z"
+    },
+    {
+        "id": 29,
+        "group_id": 1,
+        "title": "Fix broken links in footer",
+        "description": "Identify and repair broken hyperlinks in the footer section of the website.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T10:30:00.000000Z",
+        "updated_at": "2024-06-21T10:30:00.000000Z"
+    },
+    {
+        "id": 30,
+        "group_id": 1,
+        "title": "Implement real-time notifications",
+        "description": "Develop and integrate real-time notification system to keep users updated with relevant information.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T10:45:00.000000Z",
+        "updated_at": "2024-06-21T10:45:00.000000Z"
+    },
+    {
+        "id": 31,
+        "group_id": 1,
+        "title": "Update user dashboard UI",
+        "description": "Enhance user dashboard interface with new widgets and improved navigation.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T11:00:00.000000Z",
+        "updated_at": "2024-06-21T11:00:00.000000Z"
+    },
+    {
+        "id": 32,
+        "group_id": 1,
+        "title": "Fix image upload issue",
+        "description": "Investigate and fix issues related to image upload functionality.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T11:15:00.000000Z",
+        "updated_at": "2024-06-21T11:15:00.000000Z"
+    },
+    {
+        "id": 33,
+        "group_id": 1,
+        "title": "Update privacy policy page",
+        "description": "Review and update privacy policy page to comply with new regulations.",
+        "deadline": "2024-01-01",
+        "status": "delete",
+        "created_at": "2024-06-21T11:30:00.000000Z",
+        "updated_at": "2024-06-21T11:30:00.000000Z"
+    },
+    {
+        "id": 34,
+        "group_id": 1,
+        "title": "Implement dark mode feature",
+        "description": "Add dark mode feature to improve user experience in low-light environments.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T11:45:00.000000Z",
+        "updated_at": "2024-06-21T11:45:00.000000Z"
+    },
+    {
+        "id": 35,
+        "group_id": 1,
+        "title": "Fix broken CSS styles",
+        "description": "Identify and fix broken CSS styles affecting the website layout.",
+        "deadline": "2024-01-01",
+        "status": "done",
+        "created_at": "2024-06-21T12:00:00.000000Z",
+        "updated_at": "2024-06-21T12:00:00.000000Z"
+    },
+    {
+        "id": 36,
+        "group_id": 1,
+        "title": "Update error handling mechanisms",
+        "description": "Enhance error handling mechanisms to provide clearer error messages to users.",
+        "deadline": "2024-01-01",
+        "status": "pending",
+        "created_at": "2024-06-21T12:15:00.000000Z",
+        "updated_at": "2024-06-21T12:15:00.000000Z"
+    }
+]

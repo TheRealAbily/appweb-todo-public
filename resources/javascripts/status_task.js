@@ -134,10 +134,38 @@ form.addEventListener('submit', function (event) {
 
     // Send the form:
     if (validInputs) {
-        if (button.classList.contains('mcb-footer-content-right-button')) {
-            form.submit();
-            window.location.href = 'dashboard.html';
-        }
+        // Keys and values
+        const keys = ['name', 'description', 'deadline', 'group_id'];
+        const values = [titleValue, descriptionValue, '2000-01-01', 1];
+
+        let task_form = {};
+        keys.forEach((key, index) => {
+            task_form[key] = values[index];
+        });
+        console.log(task_form);
+        const url = 'http://127.0.0.1:8000/api/task';
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(task_form)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    console.log(response.statusText);
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(responseData => {
+                console.log('Datos enviados: ', responseData);
+                window.location.href = 'dashboard.html';
+            })
+            .catch(error => {
+                console.error('Error: ', error);
+            });
     }
     else {
         button.classList.remove('mcb-footer-content-right-button');
