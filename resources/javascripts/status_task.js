@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Submit verification --------------------------------------------------------------------------------------------
 
 // Submit vars:
-let firtsTime = false;
+var firtsTime = false;
 
 const form = document.getElementById('form-new-task');
 const button = document.getElementById('confirm-task');
@@ -42,41 +42,35 @@ form.addEventListener('submit', function (event) {
     const descriptionValue = descriptionTask.value.trim();
 
     // Var:
-    let validInputs = titleValue && descriptionValue;
+    var validInputs = titleValue && descriptionValue;
 
     // Send the form:
     if (validInputs) {
-        // Keys and values
-        const keys = ['name', 'description', 'deadline', 'group_id'];
-        const values = [titleValue, descriptionValue, '2000-01-01', 1];
-
-        let task_form = {};
-        keys.forEach((key, index) => {
-            task_form[key] = values[index];
-        });
-        console.log(task_form);
+        // Url:
         const url = 'http://127.0.0.1:8000/api/task';
 
+        // Data:
+        const data = {
+            title: titleValue,
+            description: descriptionValue,
+            group_id: 1,
+            deadline: '2024-01-01'
+        };
+
+        // Send the data:
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(task_form)
+            body: JSON.stringify(data)
         })
-            .then(response => {
-                if (!response.ok) {
-                    console.log(response.statusText);
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(responseData => {
-                console.log('Datos enviados: ', responseData);
+            .then(response => response.json())
+            .then(() => {
                 window.location.href = 'dashboard.html';
             })
             .catch(error => {
-                console.error('Error: ', error);
+                console.error('Error:', error);
             });
     }
     else {
