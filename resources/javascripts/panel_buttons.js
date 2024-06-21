@@ -101,9 +101,95 @@ function switch_state(asideButtons, entered_id) {
     });
 }
 
+// Function to render tasks:
+const renderTasks = (tasks, status) => {
+    // Clear the tags:
+    panelDesktop.innerHTML = '';
+    panelMobile.innerHTML = '';
+
+    tasks.forEach(task => {
+        if (task.status == status || status == 'all') {
+            // Tasks for desktop version:
+            const desktopTaskElement = document.createElement('div');
+            desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
+            desktopTaskElement.innerHTML = `
+            <div class='container__section-section-desktop-div-container__task-task'>
+                <div class='container__section-section-desktop-div-container__task-task-div__top'>
+                    <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
+                        sticky_note_2
+                    </span>
+                    <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>${task.title}</h1>
+                </div>
+                <div class='container__section-section-desktop-div-container__task-task-div__middle'>
+                    <p class='container__section-section-desktop-div-container__task-task-div__middle-p'>${task.description}</p>
+                </div>
+                <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
+                    <div class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
+                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
+                            Created on: ${task.created_at.slice(0, 10)}
+                        </p>
+                    </div>
+                    <div class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
+                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-${task.status}'>
+                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
+                        </p>
+                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
+                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
+                                schedule
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>`;
+
+            // Add the child:
+            panelDesktop.appendChild(desktopTaskElement);
+
+            // Tasks for mobile version:
+            const mobileTaskElement = document.createElement('div');
+            mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
+            mobileTaskElement.innerHTML = `
+            <div class='container__section-section-mobile-div-container__task-task'>
+                <div class='container__section-section-mobile-div-container__task-task-div__top'>
+                    <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
+                        sticky_note_2
+                    </span>
+                    <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>${task.title}</h1>
+                </div>
+                <div class='container__section-section-mobile-div-container__task-task-div__middle'>
+                    <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>${task.description}</p>
+                </div>
+                <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
+                    <div class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
+                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
+                            Created on: ${task.created_at.slice(0, 10)}
+                        </p>
+                    </div>
+                    <div class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
+                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-${task.status}'>
+                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
+                        </p>
+                        <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
+                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>
+                                schedule
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>`;
+
+            // Add the child:
+            panelMobile.appendChild(mobileTaskElement);
+        }
+    });
+};
+
 // Delete tasks from dashboard:
 function show_tasks(type) {
-    // Panel tasks:
+    // Endpoint:
+    const url = 'http://127.0.0.1:8000/api/task';
+
+    // Get the tags:
     const panelDesktop = document.getElementById('container-tasks-desktop');
     const panelMobile = document.getElementById('container-tasks-mobile');
 
@@ -111,380 +197,38 @@ function show_tasks(type) {
     panelDesktop.innerHTML = ``;
     panelMobile.innerHTML = ``;
 
-    // Show new tasks:
-    switch (type) {
-        case 'dashboard':
-            panelDesktop.innerHTML += `
-                <div class='container__section-section-mobile-div-container__task'>
-                    <div class='container__section-section-mobile-div-container__task-task'>
-                        <!-- Title task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                            <span
-                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                sticky_note_2
-                            </span>
-                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                title</h1>
-                        </div>
+    // Get the tasks:
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                // Error:
+                throw new Error('Server status: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Render tasks to UI:
+            switch (type) {
+                case 'dashboard': {
+                    renderTasks(data, 'pending');
+                } break;
 
-                        <!-- Description task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                description</p>
-                        </div>
+                case 'completed-tasks': {
+                    renderTasks(data, 'done');
+                } break;
 
-                        <!-- Date/Status task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                            <!-- Date -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                    Created on: ####-##-##</p>
-                            </div>
+                case 'tasks-history': {
+                    renderTasks(data, 'all');
+                } break;
 
-                            <!-- Status task -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                <!-- Pending -->
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                    Pending</p>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                        schedule
-                                    </span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            panelMobile.innerHTML += `
-                    <div class='container__section-section-mobile-div-container__task'>
-                        <div class='container__section-section-mobile-div-container__task-task'>
-                            <!-- Title task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                    sticky_note_2
-                                </span>
-                                <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                    title</h1>
-                            </div>
-    
-                            <!-- Description task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                                <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                    description</p>
-                            </div>
-    
-                            <!-- Date/Status task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                                <!-- Date -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                        Created on: ####-##-##</p>
-                                </div>
-    
-                                <!-- Status task -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                    <!-- Pending -->
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                        Pending</p>
-                                    <span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                            class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                            schedule
-                                        </span></span>
-                                </div>
-                            </div>
-                        </div>
-                </div>`;
-            break;
-
-        case 'completed-tasks':
-            panelDesktop.innerHTML += `
-                <div class='container__section-section-mobile-div-container__task'>
-                    <div class='container__section-section-mobile-div-container__task-task'>
-                        <!-- Title task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                            <span
-                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                sticky_note_2
-                            </span>
-                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                title</h1>
-                        </div>
-
-                        <!-- Description task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                description</p>
-                        </div>
-
-                        <!-- Date/Status task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                            <!-- Date -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                    Created on: ####-##-##</p>
-                            </div>
-
-                            <!-- Status task -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                <!-- Pending -->
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                    Pending</p>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                        schedule
-                                    </span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            panelMobile.innerHTML += `
-                    <div class='container__section-section-mobile-div-container__task'>
-                        <div class='container__section-section-mobile-div-container__task-task'>
-                            <!-- Title task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                    sticky_note_2
-                                </span>
-                                <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                    title</h1>
-                            </div>
-    
-                            <!-- Description task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                                <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                    description</p>
-                            </div>
-    
-                            <!-- Date/Status task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                                <!-- Date -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                        Created on: ####-##-##</p>
-                                </div>
-    
-                                <!-- Status task -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                    <!-- Pending -->
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                        Pending</p>
-                                    <span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                            class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                            schedule
-                                        </span></span>
-                                </div>
-                            </div>
-                        </div>
-                </div>`;
-            break;
-
-        case 'tasks-history':
-            panelDesktop.innerHTML += `
-                <div class='container__section-section-mobile-div-container__task'>
-                    <div class='container__section-section-mobile-div-container__task-task'>
-                        <!-- Title task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                            <span
-                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                sticky_note_2
-                            </span>
-                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                title</h1>
-                        </div>
-
-                        <!-- Description task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                description</p>
-                        </div>
-
-                        <!-- Date/Status task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                            <!-- Date -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                    Created on: ####-##-##</p>
-                            </div>
-
-                            <!-- Status task -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                <!-- Pending -->
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                    Pending</p>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                        schedule
-                                    </span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            panelMobile.innerHTML += `
-                    <div class='container__section-section-mobile-div-container__task'>
-                        <div class='container__section-section-mobile-div-container__task-task'>
-                            <!-- Title task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                    sticky_note_2
-                                </span>
-                                <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                    title</h1>
-                            </div>
-    
-                            <!-- Description task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                                <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                    description</p>
-                            </div>
-    
-                            <!-- Date/Status task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                                <!-- Date -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                        Created on: ####-##-##</p>
-                                </div>
-    
-                                <!-- Status task -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                    <!-- Pending -->
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                        Pending</p>
-                                    <span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                            class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                            schedule
-                                        </span></span>
-                                </div>
-                            </div>
-                        </div>
-                </div>`;
-            break;
-
-        case 'deleted-tasks':
-            panelDesktop.innerHTML += `
-                <div class='container__section-section-mobile-div-container__task'>
-                    <div class='container__section-section-mobile-div-container__task-task'>
-                        <!-- Title task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                            <span
-                                class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                sticky_note_2
-                            </span>
-                            <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                title</h1>
-                        </div>
-
-                        <!-- Description task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                            <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                description</p>
-                        </div>
-
-                        <!-- Date/Status task -->
-                        <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                            <!-- Date -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                    Created on: ####-##-##</p>
-                            </div>
-
-                            <!-- Status task -->
-                            <div
-                                class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                <!-- Pending -->
-                                <p
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                    Pending</p>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                        schedule
-                                    </span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            panelMobile.innerHTML += `
-                    <div class='container__section-section-mobile-div-container__task'>
-                        <div class='container__section-section-mobile-div-container__task-task'>
-                            <!-- Title task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__top'>
-                                <span
-                                    class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
-                                    sticky_note_2
-                                </span>
-                                <h1 class='container__section-section-mobile-div-container__task-task-div__top-h1'>Task
-                                    title</h1>
-                            </div>
-    
-                            <!-- Description task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__middle'>
-                                <p class='container__section-section-mobile-div-container__task-task-div__middle-p'>Task
-                                    description</p>
-                            </div>
-    
-                            <!-- Date/Status task -->
-                            <div class='container__section-section-mobile-div-container__task-task-div__bottom'>
-                                <!-- Date -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-left__container'>
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-left__container-p'>
-                                        Created on: ####-##-##</p>
-                                </div>
-    
-                                <!-- Status task -->
-                                <div
-                                    class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                                    <!-- Pending -->
-                                    <p
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                                        Pending</p>
-                                    <span
-                                        class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'><span
-                                            class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>
-                                            schedule
-                                        </span></span>
-                                </div>
-                            </div>
-                        </div>
-                </div>`;
-            break;
-    }
+                case 'deleted-tasks': {
+                    renderTasks(data, 'delete');
+                } break;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 
     // Tasks (desktop & mobile version):
     const task = document.querySelectorAll('section section div div div');

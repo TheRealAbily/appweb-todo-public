@@ -98,9 +98,6 @@ fetch(url)
         return response.json();
     })
     .then(data => {
-        // Show the tasks (console):
-        console.log(data);
-
         // Render tasks to UI:
         renderTasks(data);
     })
