@@ -6,13 +6,31 @@ const panelMobile = document.getElementById('container-tasks-mobile');
 const url = 'http://127.0.0.1:8000/api/task';
 
 // Function to render tasks:
-const renderTasksInit = (tasks) => {
+const renderTasksInit = (tasks, status) => {
     // Clear the tags:
     panelDesktop.innerHTML = '';
     panelMobile.innerHTML = '';
 
     tasks.forEach(task => {
-        if (task.status == 'pending') {
+        if (task.status == status || status == 'all') {
+            // Icon:
+            switch (task.status) {
+                case 'pending': {
+                    var icon = 'schedule';
+                    break;
+                }
+
+                case 'done': {
+                    var icon = 'check';
+                    break;
+                }
+
+                case 'deleted': {
+                    var icon = 'close';
+                    break;
+                }
+            }
+
             // Tasks for desktop version:
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
@@ -34,12 +52,13 @@ const renderTasksInit = (tasks) => {
                         </p>
                     </div>
                     <div class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
-                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-pending'>
-                            Pending
+                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-${task.status}'>
+                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
                         </p>
-                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending'>
-                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>schedule</span>
+                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
+                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
+                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
@@ -68,12 +87,13 @@ const renderTasksInit = (tasks) => {
                         </p>
                     </div>
                     <div class='container__section-section-mobile-div-container__task-task-div__bottom-right__container'>
-                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-pending'>
-                            Pending
+                        <p class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-p-${task.status}'>
+                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
                         </p>
-                        <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending'>
-                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-pending-span material-symbols-outlined'>schedule</span>
+                        <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
+                            <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
+                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
@@ -89,6 +109,7 @@ const renderTasksInit = (tasks) => {
     // Add the event (desktop & mobile version):
     task.forEach(task => {
         task.addEventListener('click', () => {
+            localStorage.setItem('new-task', false);
             window.location.href = 'new_task.html';
         });
     });
@@ -104,8 +125,37 @@ fetch(url)
         return response.json();
     })
     .then(data => {
+        var taskToShow = sessionStorage.getItem('panel-selected') || 'dashboard';
+
+        switch (taskToShow) {
+            case 'dashboard': {
+                taskToShow = 'pending';
+                break;
+            }
+
+            case 'completed-tasks': {
+                taskToShow = 'done';
+                break;
+            }
+
+            case 'tasks-history': {
+                taskToShow = 'all';
+                break;
+            }
+
+            case 'deleted-tasks': {
+                taskToShow = 'deleted';
+                break;
+            }
+
+            case 'log-out': {
+                taskToShow = 'pending';
+                break;
+            }
+        }
+
         // Render tasks to UI:
-        renderTasksInit(data);
+        renderTasksInit(data, taskToShow);
     })
     .catch(error => {
         console.error('Error:', error);

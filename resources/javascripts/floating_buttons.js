@@ -1,7 +1,7 @@
 // Wait for the document to load:
 document.addEventListener('DOMContentLoaded', (event) => {
     // Variables:
-    var layout = 'inline';
+    var layout = localStorage.getItem('task_order') || 'inline';
     var theme = 'default';
 
     // Buttons:
@@ -14,25 +14,95 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const buttonThemeMobileVersion = document.getElementById('button__theme-mobile');
     const buttonThemeIconMobileVersion = document.getElementById('button__theme-mobile-icon');
 
-    // Tasks:
-    const tasks = document.querySelectorAll('section section div div div');
+    // // Tasks:
+    // const tasks = document.querySelectorAll('section section div div div');
 
     // Add task button (desktop version):
     buttonAddTaskDesktopVersion.addEventListener('click', () => {
+        localStorage.setItem('new-task', true);
         window.location.href = 'new_task.html';
     });
 
     // Add task button (mobile version):
     buttonAddTaskMobileVersion.addEventListener('click', () => {
+        localStorage.setItem('new-task', true);
         window.location.href = 'new_task.html';
     });
 
-    // Edit task (tasks):
-    tasks.forEach(task => {
-        task.addEventListener('click', () => {
-            window.location.href = 'new_task.html';
-        });
-    });
+    // // Edit task (tasks):
+    // tasks.forEach(task => {
+    //     task.addEventListener('click', () => {
+    //         localStorage.setItem('new-task', false);
+    //         window.location.href = 'new_task.html';
+    //     });
+    // });
+
+    // Firts layout:
+    switch (layout) {
+        case 'left': {
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-width', '500px');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-height', '220px');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-box-sizing', 'border-box');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-flex-direction', 'row');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-wrap', 'wrap');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-justify-content', 'left');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-align-items', 'start');
+
+            // Icon:
+            buttonLayoutIcon.innerHTML = 'format_align_left';
+            break;
+        }
+
+        case 'center': {
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-width', '97.3%');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-height', 'none');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-box-sizing', 'content-box');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-flex-direction', 'column');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-wrap', 'none');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-justify-content', 'start');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-align-items', 'center');
+
+            // Icon:
+            buttonLayoutIcon.innerHTML = 'format_align_center';
+            break;
+        }
+
+        case 'right': {
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-width', '500px');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-height', '220px');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-box-sizing', 'border-box');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-flex-direction', 'row');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-wrap', 'wrap');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-justify-content', 'right');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-align-items', 'start');
+
+            // Icon:
+            buttonLayoutIcon.innerHTML = 'format_align_right';
+            break;
+        }
+
+        case 'inline': {
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-width', 'none');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-max-height', 'none');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-container__task-box-sizing', 'content-box');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-flex-direction', 'column');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-wrap', 'none');
+
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-justify-content', 'initial');
+            document.documentElement.style.setProperty('--container__section-section-desktop-div-align-items', 'initial');
+
+            // Icon:
+            buttonLayoutIcon.innerHTML = 'splitscreen';
+            break;
+        }
+    }
 
     // Layout button (desktop version):
     buttonLayout.addEventListener('click', () => {
@@ -113,6 +183,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 break;
             }
         }
+
+        // Save layout: 
+        localStorage.setItem('task_order', layout);
     });
 
     // Theme button (desktop version):

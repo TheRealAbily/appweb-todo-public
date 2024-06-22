@@ -9,18 +9,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Button:
     const button = document.getElementById('confirm-task');
 
-    // Check:
-    if (title.value.trim() === '' || description.value.trim() === '') {
-        if (button.classList.contains('mcb-footer-content-button')) {
-            button.classList.remove('mcb-footer-content-button');
-        }
-        button.classList.add('mcb-footer-content-invalid-button');
+    // Retrieve task information:
+    if (localStorage.getItem('new-task') == 'true') {
+        // Get the information task:
     }
     else {
-        if (button.classList.contains('mcb-footer-content-invalid-button')) {
-            button.classList.remove('mcb-footer-content-invalid-button');
+        // Check:
+        if (title.value.trim() === '' || description.value.trim() === '') {
+            if (button.classList.contains('mcb-footer-content-button')) {
+                button.classList.remove('mcb-footer-content-button');
+            }
+            button.classList.add('mcb-footer-content-invalid-button');
         }
-        button.classList.add('mcb-footer-content-button');
+        else {
+            if (button.classList.contains('mcb-footer-content-invalid-button')) {
+                button.classList.remove('mcb-footer-content-invalid-button');
+            }
+            button.classList.add('mcb-footer-content-button');
+        }
     }
 });
 
