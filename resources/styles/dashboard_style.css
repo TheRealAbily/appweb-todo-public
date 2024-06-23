@@ -1718,20 +1718,3 @@ body::-webkit-scrollbar-thumb:hover {
         'GRAD' 0,
         'opsz' 20
 }
-
-/* --- ID task --- */
-.id__task {
-    margin: 10px;
-
-    color: #fff;
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 450;
-    font-size: 13px;
-
-    text-align: right;
-
-    display: none;
-
-    filter: drop-shadow(0 0 3px var(--general-font-light));
-}

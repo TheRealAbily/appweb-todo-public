@@ -35,7 +35,7 @@ const renderTasksInit = (tasks, status) => {
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
             desktopTaskElement.innerHTML = `
-            <div class='container__section-section-desktop-div-container__task-task'>
+            <div class='container__section-section-desktop-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-desktop-div-container__task-task-div__top'>
                     <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
                         sticky_note_2
@@ -58,7 +58,6 @@ const renderTasksInit = (tasks, status) => {
                         <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
                             <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
-                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
@@ -70,7 +69,7 @@ const renderTasksInit = (tasks, status) => {
             const mobileTaskElement = document.createElement('div');
             mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
             mobileTaskElement.innerHTML = `
-            <div class='container__section-section-mobile-div-container__task-task'>
+            <div class='container__section-section-mobile-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-mobile-div-container__task-task-div__top'>
                     <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
                         sticky_note_2
@@ -93,7 +92,6 @@ const renderTasksInit = (tasks, status) => {
                         <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
                             <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
-                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
