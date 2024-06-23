@@ -450,7 +450,7 @@ body {
     border-radius: 13px;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -471,7 +471,7 @@ body {
     margin: 10px auto;
     padding: 7px;
 
-    width: 100%;
+    width: 50%;
     height: 37px;
 
     background-color: #104666;
@@ -516,9 +516,10 @@ body {
     transition: box-shadow 0.25s ease;
 
     margin: 10px auto;
+    margin-right: 10px;
     padding: 7px;
 
-    width: 100%;
+    width: 50%;
     height: 37px;
 
     background-color: #661010;
@@ -596,40 +597,29 @@ body {
 @media screen and (min-width: 601px) and (max-width: 850px) {
 
     .mcb-footer-content-button,
+    .mcb-footer-content-button-delete,
     .mcb-footer-content-invalid-button {
         width: 100%;
-
-        margin: 20px 0;
-    }
-
-
-    .mcb-footer-content-button-delete {
-        width: 100%;
-
-        margin-top: 20px;
-        margin-bottom: 5px;
     }
 }
 
 @media screen and (min-width: 501px) and (max-width: 600px) {
 
     .mcb-footer-content-button,
+    .mcb-footer-content-button-delete,
     .mcb-footer-content-invalid-button {
         width: 100%;
 
-        margin: 20px 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-
-    .mcb-footer-content-button-delete {
-        width: 100%;
-
-        margin-top: 20px;
-        margin-bottom: 5px;
+    .mcb-footer-content {
+        flex-direction: column;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 301px) and (max-width: 500px) {
     .mcb-footer-content {
         padding: 8px 20px;
     }
@@ -639,15 +629,30 @@ body {
     .mcb-footer-content-invalid-button {
         width: 100%;
 
-        margin: 10px 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mcb-footer-content {
+        flex-direction: column;
     }
 }
 
 @media screen and (max-width: 300px) {
 
     .mcb-footer-content-button,
-    .mcb-footer-content-button-delete {
+    .mcb-footer-content-button-delete,
+    .mcb-footer-content-invalid-button {
+        width: 100%;
+
         font-size: 12px;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mcb-footer-content {
+        flex-direction: column;
     }
 }
 

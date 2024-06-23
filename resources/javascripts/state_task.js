@@ -3,7 +3,7 @@ const input_title = document.getElementById('title-task');
 const input_description = document.getElementById('description-task');
 const footer = document.getElementById('mcb-footer-content');
 const url = 'http://127.0.0.1:8000/api/task';
-let id_task = 60;
+let id_task = 0;
 
 // Check inputs:
 function check(input) {
@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // Edit task:
     else {
         // Get the task:
         fetch(url + '/' + id_task)
@@ -196,13 +197,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         // New buttons:
-        footer.style.flexDirection = 'column';
         footer.innerHTML = `<button class='mcb-footer-content-button-delete' id='delete-task'>Delete</button>
         <button class='mcb-footer-content-button' id='edit-task'>Edit</button>`;
 
         // Buttons:
         const button_delete = document.getElementById('delete-task');
         const button_edit = document.getElementById('edit-task');
+
+        // Edit button:
+        if (window.innerWidth >= 601) {
+            button_edit.style.marginLeft = '10px';
+        }
+        else {
+            button_edit.style.marginLeft = '0px';
+        }
+
+        // Screen:
+        window.addEventListener('resize', () => {
+            // Edit button:
+            if (window.innerWidth >= 601) {
+                button_edit.style.marginLeft = '10px';
+            }
+            else {
+                button_edit.style.marginLeft = '0px';
+            }
+        })
 
         // Inputs:
         input_title.addEventListener('input', () => {
