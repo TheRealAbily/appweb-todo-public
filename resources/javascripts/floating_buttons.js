@@ -29,14 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         window.location.href = 'new_task.html';
     });
 
-    // // Edit task (tasks):
-    // tasks.forEach(task => {
-    //     task.addEventListener('click', () => {
-    //         localStorage.setItem('new-task', false);
-    //         window.location.href = 'new_task.html';
-    //     });
-    // });
-
     // Firts layout:
     switch (layout) {
         case 'left': {

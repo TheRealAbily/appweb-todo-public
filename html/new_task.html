@@ -13,7 +13,7 @@
     <link rel='stylesheet'
         href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200' />
 
-    <script src='../resources/javascripts/status_task.js' defer></script>
+    <script src='../resources/javascripts/state_task.js' defer></script>
 
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
@@ -32,7 +32,7 @@
         <section class='mcb-title'>
             <div class='mcb-title-content'>
                 <p class='mcb-title-content-text'>Task title:</p>
-                <input class='mcb-title-content-input' type='text' id='title-task'>
+                <input class='mcb-title-content-input' type='text' id='title-task' autocomplete="off">
             </div>
         </section>
 
@@ -40,14 +40,15 @@
         <section class='mcb-description'>
             <div class='mcb-description-content'>
                 <p class='mcb-description-content-text'>Task description:</p>
-                <textarea class='mcb-description-content-input' type='text' id='description-task'></textarea>
+                <textarea class='mcb-description-content-input' type='text' id='description-task'
+                    autocomplete="off"></textarea>
             </div>
         </section>
 
         <!-- State -->
         <section class='mcb-footer'>
-            <div class='mcb-footer-content'>
-                <button class='mcb-footer-content-button' type='submit' id='confirm-task'>Confirm</button>
+            <div class='mcb-footer-content' id='mcb-footer-content'>
+                <button class='mcb-footer-content-invalid-button' id='confirm-task'>Confirm</button>
             </div>
         </section>
     </form>

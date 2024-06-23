@@ -510,6 +510,53 @@ body {
     box-shadow: 0px 0px 10px rgba(37, 114, 160, 0.7);
 }
 
+/* --- Task delete (button) --- */
+.mcb-footer-content-button-delete {
+    transition: border 0.25s ease;
+    transition: box-shadow 0.25s ease;
+
+    margin: 10px auto;
+    padding: 7px;
+
+    width: 100%;
+    height: 37px;
+
+    background-color: #661010;
+    color: #fff;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 550;
+    font-size: 15px;
+    font-style: bold;
+
+    border: none;
+    border-radius: 7px;
+
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 20;
+}
+
+.mcb-footer-content-button-delete:hover {
+    background-color: #851919;
+    color: #fff;
+
+    box-shadow: 0px 0px 10px rgba(143, 31, 31, 0.55);
+}
+
+.mcb-footer-content-button-delete:active {
+    background-color: #a32626;
+    color: #fff;
+
+    box-shadow: 0px 0px 10px rgba(160, 37, 37, 0.7);
+}
+
 .mcb-footer-content-invalid-button {
     transition: border 0.25s ease;
     transition: box-shadow 0.25s ease;
@@ -554,6 +601,14 @@ body {
 
         margin: 20px 0;
     }
+
+
+    .mcb-footer-content-button-delete {
+        width: 100%;
+
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (min-width: 501px) and (max-width: 600px) {
@@ -564,6 +619,14 @@ body {
 
         margin: 20px 0;
     }
+
+
+    .mcb-footer-content-button-delete {
+        width: 100%;
+
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -572,6 +635,7 @@ body {
     }
 
     .mcb-footer-content-button,
+    .mcb-footer-content-button-delete,
     .mcb-footer-content-invalid-button {
         width: 100%;
 
@@ -580,7 +644,9 @@ body {
 }
 
 @media screen and (max-width: 300px) {
-    .mcb-footer-content-button {
+
+    .mcb-footer-content-button,
+    .mcb-footer-content-button-delete {
         font-size: 12px;
     }
 }
