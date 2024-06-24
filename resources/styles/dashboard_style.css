@@ -401,6 +401,11 @@ body::-webkit-scrollbar-thumb:hover {
     filter: drop-shadow(0 0 3px var(--general-font-light-2));
 }
 
+@media screen and (max-width: 500px) {
+    .container__section-section-mobile-div-container__task-task-div__bottom-left__container-p {
+        font-size: 13px;
+    }
+}
 
 /* --- Task bottom right container (mobile version) --- */
 .container__section-section-mobile-div-container__task-task-div__bottom-right__container {
