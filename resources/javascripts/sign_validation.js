@@ -81,6 +81,9 @@ else { // Sign up:
     validation_event(c_password_input, value => validate_cpassword(password_input.value, value), [username_input, email_input, password_input]);
 }
 
+// Default:
+sessionStorage.setItem('panel-selected', 'dashboard');
+
 // Submit verification:
 form.addEventListener('submit', function (event) {
     event.preventDefault();

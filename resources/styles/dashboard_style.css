@@ -915,7 +915,9 @@ body::-webkit-scrollbar-thumb:hover {
 .container__section-button__add-task-desktop,
 .container__section-button__theme-mobile,
 .container__section-button__theme-desktop,
-.container__section-button__layout-desktop {
+.container__section-button__layout-desktop,
+.container__section-button__delete-all-tasks-desktop,
+.container__section-button__delete-all-tasks-mobile {
     width: 65px;
     height: 65px;
 
@@ -947,7 +949,10 @@ body::-webkit-scrollbar-thumb:hover {
 .container__section-button__add-task-desktop:hover,
 .container__section-button__theme-mobile:hover,
 .container__section-button__theme-desktop:hover,
-.container__section-button__layout-desktop:hover {
+.container__section-button__layout-desktop:hover,
+.container__section-button__layout-desktop:hover,
+.container__section-button__delete-all-tasks-desktop:hover,
+.container__section-button__delete-all-tasks-mobile:hover {
     background-color: var(--bg-button-floating-hover);
 }
 
@@ -955,7 +960,9 @@ body::-webkit-scrollbar-thumb:hover {
 .container__section-button__add-task-desktop:hover span,
 .container__section-button__theme-mobile:hover span,
 .container__section-button__theme-desktop:hover span,
-.container__section-button__layout-desktop:hover span {
+.container__section-button__layout-desktop:hover span,
+.container__section-button__delete-all-tasks-desktop:hover span,
+.container__section-button__delete-all-tasks-mobile:hover span {
     filter: drop-shadow(0 0 20px var(--bg-button-floating-icon-hover-light));
 }
 
@@ -966,6 +973,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 .container__section-button__layout-desktop {
     right: calc(130px + (90px * var(--show-button__theme)));
+}
+
+.container__section-button__delete-all-tasks-desktop,
+.container__section-button__delete-all-tasks-mobile {
+    right: calc(130px + (180px * var(--show-button__theme)));
 }
 
 @media screen and (max-width: 720px) {

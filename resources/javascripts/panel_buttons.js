@@ -131,7 +131,7 @@ const renderTasks = (tasks, status) => {
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
             desktopTaskElement.innerHTML = `
-            <div class='container__section-section-desktop-div-container__task-task'>
+            <div class='container__section-section-desktop-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-desktop-div-container__task-task-div__top'>
                     <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
                         sticky_note_2
@@ -154,7 +154,6 @@ const renderTasks = (tasks, status) => {
                         <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
                             <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
-                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
@@ -166,7 +165,7 @@ const renderTasks = (tasks, status) => {
             const mobileTaskElement = document.createElement('div');
             mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
             mobileTaskElement.innerHTML = `
-            <div class='container__section-section-mobile-div-container__task-task'>
+            <div class='container__section-section-mobile-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-mobile-div-container__task-task-div__top'>
                     <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
                         sticky_note_2
@@ -189,7 +188,6 @@ const renderTasks = (tasks, status) => {
                         <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}'>
                             <span class='container__section-section-mobile-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
                         </span>
-                        <p class='id__task'>Task ID:  ${task.id}</p>
                     </div>
                 </div>
             </div>`;
@@ -206,6 +204,7 @@ const renderTasks = (tasks, status) => {
     task.forEach(task => {
         task.addEventListener('click', () => {
             localStorage.setItem('new-task', false);
+            localStorage.setItem('id-task', task.id);
             window.location.href = 'new_task.html';
         });
     });
@@ -274,40 +273,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    // Selected button:
-    var selected = sessionStorage.getItem('panel-selected') || 'dashboard';
+    // Selected the button:
+    const buttonSelected = document.getElementById(sessionStorage.getItem('panel-selected') || 'dashboard');
 
-    if (selected === 'log-out') {
-        // Select the button:
-        const buttonSelected = document.getElementById(selected);
-
-        // Change the class (desktop):
-        if (buttonSelected.classList.contains('container__section-section-desktop-aside-div__bottom-a')) {
-            buttonSelected.classList.remove('container__section-section-desktop-aside-div__bottom-a');
-            buttonSelected.classList.add('container__section-section-desktop-aside-div__bottom-a-selected');
-        }
-
-        // Change the class (mobile):
-        if (buttonSelected.classList.contains('container__section-mobile-section-div-div__bottom-a')) {
-            buttonSelected.classList.remove('container__section-mobile-section-div-div__bottom-a');
-            buttonSelected.classList.add('container__section-mobile-section-div-div__bottom-a-selected');
-        }
+    // Change the class (desktop):
+    if (buttonSelected.classList.contains('container__section-section-desktop-aside-div__middle-a')) {
+        buttonSelected.classList.remove('container__section-section-desktop-aside-div__middle-a');
+        buttonSelected.classList.add('container__section-section-desktop-aside-div__middle-a-selected');
     }
-    else {
-        // Select the button:
-        const buttonSelected = document.getElementById(selected);
 
-        // Change the class (desktop):
-        if (buttonSelected.classList.contains('container__section-section-desktop-aside-div__middle-a')) {
-            buttonSelected.classList.remove('container__section-section-desktop-aside-div__middle-a');
-            buttonSelected.classList.add('container__section-section-desktop-aside-div__middle-a-selected');
-        }
-
-        // Change the class (mobile):
-        if (buttonSelected.classList.contains('container__section-mobile-section-div-div__middle-a')) {
-            buttonSelected.classList.remove('container__section-mobile-section-div-div__middle-a');
-            buttonSelected.classList.add('container__section-mobile-section-div-div__middle-a-selected');
-        }
+    // Change the class (mobile):
+    if (buttonSelected.classList.contains('container__section-mobile-section-div-div__middle-a')) {
+        buttonSelected.classList.remove('container__section-mobile-section-div-div__middle-a');
+        buttonSelected.classList.add('container__section-mobile-section-div-div__middle-a-selected');
     }
 });
 
@@ -322,42 +300,42 @@ asideButtonsDesktopVersion.forEach(button => {
         if (!button.classList.contains('container__section-section-desktop-aside-div__middle-a-selected') || !button.classList.contains('container__section-section-desktop-aside-div__bottom-a-selected')) {
             switch (button.id) {
                 case 'dashboard':
+                    sessionStorage.setItem('panel-selected', 'dashboard');
                     switch_state(asideButtonsMobileVersion, 'dashboard');
                     switch_state(asideButtonsDesktopVersion, 'dashboard');
                     show_tasks(button.id);
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'dashboard');
                     break;
 
                 case 'completed-tasks':
+                    sessionStorage.setItem('panel-selected', 'completed-tasks');
                     switch_state(asideButtonsMobileVersion, 'completed-tasks');
                     switch_state(asideButtonsDesktopVersion, 'completed-tasks');
                     show_tasks(button.id);
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'completed-tasks');
                     break;
 
                 case 'tasks-history':
+                    sessionStorage.setItem('panel-selected', 'tasks-history');
                     switch_state(asideButtonsMobileVersion, 'tasks-history');
                     switch_state(asideButtonsDesktopVersion, 'tasks-history');
                     show_tasks(button.id);
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'tasks-history');
                     break;
 
                 case 'deleted-tasks':
+                    sessionStorage.setItem('panel-selected', 'deleted-tasks');
                     switch_state(asideButtonsMobileVersion, 'deleted-tasks');
                     switch_state(asideButtonsDesktopVersion, 'deleted-tasks');
                     show_tasks(button.id);
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'deleted-tasks');
                     break;
 
                 case 'log-out':
+                    sessionStorage.setItem('panel-selected', 'dashboard');
                     switch_state(asideButtonsMobileVersion, 'log-out');
                     switch_state(asideButtonsDesktopVersion, 'log-out');
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'dashboard');
                     break;
             }
         }
@@ -390,6 +368,7 @@ asideButtonsMobileVersion.forEach(button => {
         if (!button.classList.contains('container__section-mobile-section-div-div__middle-a-selected') || !button.classList.contains('container__section-mobile-section-div-div__bottom-a-selected')) {
             switch (button.id) {
                 case 'dashboard':
+                    sessionStorage.setItem('panel-selected', 'dashboard');
                     switch_state(asideButtonsDesktopVersion, 'dashboard');
                     switch_state(asideButtonsMobileVersion, 'dashboard');
                     show_tasks(button.id);
@@ -397,6 +376,7 @@ asideButtonsMobileVersion.forEach(button => {
                     break;
 
                 case 'completed-tasks':
+                    sessionStorage.setItem('panel-selected', 'completed-tasks');
                     switch_state(asideButtonsDesktopVersion, 'completed-tasks');
                     switch_state(asideButtonsMobileVersion, 'completed-tasks');
                     show_tasks(button.id);
@@ -404,6 +384,7 @@ asideButtonsMobileVersion.forEach(button => {
                     break;
 
                 case 'tasks-history':
+                    sessionStorage.setItem('panel-selected', 'tasks-history');
                     switch_state(asideButtonsDesktopVersion, 'tasks-history');
                     switch_state(asideButtonsMobileVersion, 'tasks-history');
                     show_tasks(button.id);
@@ -411,6 +392,7 @@ asideButtonsMobileVersion.forEach(button => {
                     break;
 
                 case 'deleted-tasks':
+                    sessionStorage.setItem('panel-selected', 'deleted-tasks');
                     switch_state(asideButtonsDesktopVersion, 'deleted-tasks');
                     switch_state(asideButtonsMobileVersion, 'deleted-tasks');
                     show_tasks(button.id);
@@ -418,6 +400,7 @@ asideButtonsMobileVersion.forEach(button => {
                     break;
 
                 case 'log-out':
+                    sessionStorage.setItem('panel-selected', 'dashboard');
                     switch_state(asideButtonsDesktopVersion, 'log-out');
                     switch_state(asideButtonsMobileVersion, 'log-out');
                     move_dashboard(false);

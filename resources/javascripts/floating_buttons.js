@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const buttonThemeMobileVersion = document.getElementById('button__theme-mobile');
     const buttonThemeIconMobileVersion = document.getElementById('button__theme-mobile-icon');
 
-    // // Tasks:
-    // const tasks = document.querySelectorAll('section section div div div');
-
     // Add task button (desktop version):
     buttonAddTaskDesktopVersion.addEventListener('click', () => {
         localStorage.setItem('new-task', true);

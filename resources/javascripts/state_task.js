@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                     .then(response => response.json())
                     .then(() => {
+                        sessionStorage.setItem('panel-selected', 'dashboard');
                         window.location.href = 'dashboard.html';
                     })
                     .catch(error => {
