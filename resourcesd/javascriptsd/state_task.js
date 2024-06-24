@@ -1,9 +1,9 @@
-// Variables:
+a// Variables:
 const input_title = document.getElementById('title-task');
 const input_description = document.getElementById('description-task');
 const footer = document.getElementById('mcb-footer-content');
 const url = 'http://127.0.0.1:8000/api/task';
-let id_task = 62;
+let id_task = localStorage.getItem('id-task');
 
 // Check inputs:
 function check(input) {

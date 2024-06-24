@@ -1,4 +1,4 @@
-// Functions -----------------------------------------------------------------------------------------------------
+a// Functions -----------------------------------------------------------------------------------------------------
 
 // Move dashboard (mobile version):
 function move_dashboard(show) {
@@ -269,6 +269,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     task.forEach(task => {
         task.addEventListener('click', () => {
             localStorage.setItem('new-task', false);
+            localStorage.setItem('id-task', task.id);
             window.location.href = 'new_task.html';
         });
     });
@@ -356,7 +357,7 @@ asideButtonsDesktopVersion.forEach(button => {
                     switch_state(asideButtonsMobileVersion, 'log-out');
                     switch_state(asideButtonsDesktopVersion, 'log-out');
                     move_dashboard(false);
-                    sessionStorage.setItem('panel-selected', 'log-out');
+                    sessionStorage.setItem('panel-selected', 'dashboard');
                     break;
             }
         }

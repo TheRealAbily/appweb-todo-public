@@ -1,4 +1,4 @@
-// Get the tags:
+a// Get the tags:
 const panelDesktop = document.getElementById('container-tasks-desktop');
 const panelMobile = document.getElementById('container-tasks-mobile');
 
@@ -108,6 +108,7 @@ const renderTasksInit = (tasks, status) => {
     task.forEach(task => {
         task.addEventListener('click', () => {
             localStorage.setItem('new-task', false);
+            localStorage.setItem('id-task', task.id);
             window.location.href = 'new_task.html';
         });
     });
