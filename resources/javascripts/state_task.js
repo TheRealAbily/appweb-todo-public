@@ -1,4 +1,4 @@
-a// Variables:
+// Variables:
 const input_title = document.getElementById('title-task');
 const input_description = document.getElementById('description-task');
 const footer = document.getElementById('mcb-footer-content');

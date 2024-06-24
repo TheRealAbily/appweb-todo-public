@@ -1,4 +1,4 @@
-a// Get the tags:
+// Get the tags:
 const panelDesktop = document.getElementById('container-tasks-desktop');
 const panelMobile = document.getElementById('container-tasks-mobile');
 
