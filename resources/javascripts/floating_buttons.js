@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Variables:
     var layout = localStorage.getItem('task_order') || 'inline';
-    var theme = 'default';
+    var theme = localStorage.getItem("selected_theme") || "default";
 
     // Buttons:
     const buttonAddTaskDesktopVersion = document.getElementById('button__add-task-desktop');
@@ -476,4 +476,6 @@ const changeTheme = (theme) => {
             break;
         }
     }
+
+    localStorage.setItem("selected_theme", theme);
 }
