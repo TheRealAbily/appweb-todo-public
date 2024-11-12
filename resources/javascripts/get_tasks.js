@@ -35,11 +35,10 @@ const renderTasksInit = (tasks, status) => {
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
             desktopTaskElement.innerHTML = `
+            <!-- Task (${task.status}) -->
             <div class='container__section-section-desktop-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-desktop-div-container__task-task-div__top'>
-                    <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
-                        sticky_note_2
-                    </span>
+                    <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>sticky_note_2</span>
                     <h1 class='container__section-section-desktop-div-container__task-task-div__top-h1'>${task.title}</h1>
                 </div>
                 <div class='container__section-section-desktop-div-container__task-task-div__middle'>
@@ -47,17 +46,15 @@ const renderTasksInit = (tasks, status) => {
                 </div>
                 <div class='container__section-section-desktop-div-container__task-task-div__bottom'>
                     <div class='container__section-section-desktop-div-container__task-task-div__bottom-left__container'>
-                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>
-                            Created on: ${task.created_at.slice(0, 10)}
-                        </p>
+                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-left__container-p'>Created on: ${task.created_at.slice(0, 10)}</p>
                     </div>
                     <div class='container__section-section-desktop-div-container__task-task-div__bottom-right__container'>
-                        <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-${task.status}'>
-                            ${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}
-                        </p>
-                        <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
-                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
-                        </span>
+                        <div class='invisible-button' id='invisible-button'>
+                            <p class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-p-${task.status}'>${task.status.charAt(0).toUpperCase() + task.status.slice(1).toLowerCase()}</p>
+                            <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}'>
+                                <span class='container__section-section-desktop-div-container__task-task-div__bottom-right__container-box-${task.status}-span material-symbols-outlined'>${icon}</span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>`;
@@ -69,6 +66,7 @@ const renderTasksInit = (tasks, status) => {
             const mobileTaskElement = document.createElement('div');
             mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
             mobileTaskElement.innerHTML = `
+            <!-- Task (${task.status}) -->
             <div class='container__section-section-mobile-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-mobile-div-container__task-task-div__top'>
                     <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
@@ -111,6 +109,10 @@ const renderTasksInit = (tasks, status) => {
             localStorage.setItem('id-task', task.id);
             window.location.href = 'new_task.html';
         });
+    });
+
+    document.getElementById('invisible-button').addEventListener('mouseenter', function (event) {
+        event.stopPropagation();
     });
 };
 

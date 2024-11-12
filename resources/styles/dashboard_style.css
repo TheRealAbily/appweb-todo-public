@@ -1481,6 +1481,8 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: 15px;
 
     box-sizing: content-box;
+
+    z-index: 0;
 }
 
 /* --- Task | Hover (desktop version) --- */
@@ -1574,7 +1576,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* --- Task bottom (desktop version) --- */
 .container__section-section-desktop-div-container__task-task-div__bottom {
-    margin: 20px;
+    margin: 10px 20px;
 
     display: flex;
     justify-content: center;
@@ -1734,4 +1736,38 @@ body::-webkit-scrollbar-thumb:hover {
         'wght' 400,
         'GRAD' 0,
         'opsz' 20
+}
+
+/* --- Invisible button --- */
+.invisible-button {
+    padding: 15px;
+
+    width: 50%;
+    max-width: 100px;
+    min-width: 105px;
+
+    height: 100%;
+
+    background-image: linear-gradient(to top, var(--bg-task-gradient-start), var(--bg-task-gradient-end));
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    border: 2px solid var(--b-color);
+    border-radius: 15px;
+
+    z-index: 50;
+}
+
+.invisible-button:hover {
+    border: 2px solid var(--task-content-border);
+
+    filter: drop-shadow(0 0 7px var(--task-content-light));
+}
+
+.invisible-button:hover .container__section-section-desktop-div-container__task-task {
+    border: 0 solid transparent;
+
+    filter: drop-shadow(0 0 0 transparent);
 }
