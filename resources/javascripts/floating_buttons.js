@@ -220,8 +220,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         switch (theme) {
             case 'default': {
                 // Icon:
-                buttonThemeIconDesktopVersion.innerHTML = 'light_mode';
-                buttonThemeIconMobileVersion.innerHTML = 'light_mode';
+                buttonThemeIconDesktopVersion.innerHTML = 'clear_day';
+                buttonThemeIconMobileVersion.innerHTML = 'clear_day';
 
                 // Variable:
                 theme = 'light';
@@ -240,8 +240,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             case 'dark': {
                 // Icon:
-                buttonThemeIconDesktopVersion.innerHTML = 'open_run';
-                buttonThemeIconMobileVersion.innerHTML = 'open_run';
+                buttonThemeIconDesktopVersion.innerHTML = 'routine';
+                buttonThemeIconMobileVersion.innerHTML = 'routine';
 
                 // Variable:
                 theme = 'default';
