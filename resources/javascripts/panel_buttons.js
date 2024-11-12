@@ -131,6 +131,7 @@ const renderTasks = (tasks, status) => {
             const desktopTaskElement = document.createElement('div');
             desktopTaskElement.classList.add('container__section-section-desktop-div-container__task');
             desktopTaskElement.innerHTML = `
+            <!-- Task (${task.id}) -->
             <div class='container__section-section-desktop-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-desktop-div-container__task-task-div__top'>
                     <span class='container__section-section-desktop-div-container__task-task-div__top-span material-symbols-outlined'>
@@ -165,6 +166,7 @@ const renderTasks = (tasks, status) => {
             const mobileTaskElement = document.createElement('div');
             mobileTaskElement.classList.add('container__section-section-mobile-div-container__task');
             mobileTaskElement.innerHTML = `
+            <!-- Task (${task.id}) -->
             <div class='container__section-section-mobile-div-container__task-task' id='${task.id}'>
                 <div class='container__section-section-mobile-div-container__task-task-div__top'>
                     <span class='container__section-section-mobile-div-container__task-task-div__top-span material-symbols-outlined'>
