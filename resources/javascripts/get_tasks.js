@@ -116,12 +116,20 @@ const renderTasksInit = (tasks, status) => {
     });
 };
 
+// Internet error:
+const showMessageInternetError = () => {
+    // Clear the tags:
+    panelDesktop.innerHTML = '';
+    panelMobile.innerHTML = '';
+}
+
 // Get the tasks:
 fetch(url)
     .then(response => {
         if (!response.ok) {
             // Error:
             throw new Error('Server status: ' + response.statusText);
+            showMessageInternetError();
         }
         return response.json();
     })

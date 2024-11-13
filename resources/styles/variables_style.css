@@ -67,6 +67,11 @@
     --bg-footer: #0d0f13;
     --bg-footer-text: #fff;
 
+    /* --- Error --- */
+    --bg-error-gradient-start: #312020;
+    --bg-error-gradient-end: #221414bf;
+    --b-error-color: #413030;
+
     /* --- Layout --- */
     --container__section-section-desktop-div-container__task-max-width: none;
     --container__section-section-desktop-div-container__task-max-height: none;
