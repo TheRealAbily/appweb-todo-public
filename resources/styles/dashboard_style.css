@@ -989,6 +989,12 @@ body::-webkit-scrollbar-thumb:hover {
     .container__section-button-desktop {
         display: none;
     }
+
+    .container__section-button__theme-mobile,
+    .container__section-button__theme-desktop {
+        bottom: 115px;
+        right: 40px;
+    }
 }
 
 /* --- Footer --- */
