@@ -75,6 +75,11 @@ const changeTheme = (theme) => {
             // Footer:
             root.style.setProperty('--bg-footer', '#0d0f13');
             root.style.setProperty('--bg-footer-text', '#fff');
+
+            // Error:
+            root.style.setProperty('--general-font-error', '#fff');
+            root.style.setProperty('--general-font-error-2', '#a7a7a7');
+            root.style.setProperty('--general-font-light-error', '#ffffff80');
             break;
         }
 
@@ -148,6 +153,11 @@ const changeTheme = (theme) => {
             // Footer:
             root.style.setProperty('--bg-footer', '#fafafa');
             root.style.setProperty('--bg-footer-text', '#333');
+
+            // Error:
+            root.style.setProperty('--general-font-error', '#fff');
+            root.style.setProperty('--general-font-error-2', '#a7a7a7');
+            root.style.setProperty('--general-font-light-error', '#ffffff80');
             break;
         }
 
@@ -220,6 +230,11 @@ const changeTheme = (theme) => {
             // Footer:
             root.style.setProperty('--bg-footer', '#0d0f13');
             root.style.setProperty('--bg-footer-text', '#fff');
+
+            // Error:
+            root.style.setProperty('--general-font-error', '#fff');
+            root.style.setProperty('--general-font-error-2', '#a7a7a7');
+            root.style.setProperty('--general-font-light-error', '#ffffff80');
             break;
         }
     }

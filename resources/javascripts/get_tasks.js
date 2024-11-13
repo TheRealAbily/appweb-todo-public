@@ -117,10 +117,52 @@ const renderTasksInit = (tasks, status) => {
 };
 
 // Internet error:
-const showMessageInternetError = () => {
+function showMessageInternetError() {
     // Clear the tags:
     panelDesktop.innerHTML = '';
     panelMobile.innerHTML = '';
+
+    // Tasks for desktop version:
+    const desktopTaskElement = document.createElement('div');
+    desktopTaskElement.classList.add('container__section-section-desktop-div-container__error');
+    desktopTaskElement.innerHTML = `<div class='container__section-section-desktop-div-container__error-error'>
+                        <div class='container__section-section-desktop-div-container__error-error-top'>
+                            <img class='container__section-section-desktop-div-container__error-error-top-img'
+                                alt='logo' src='../resources/images/wifi_off.png'>
+                        </div>
+                        <div class='container__section-section-desktop-div-container__error-error-middle'>
+                            <p class='container__section-section-desktop-div-container__error-error-middle-p'>No
+                                internet connection</p>
+                        </div>
+                        <div class='container__section-section-desktop-div-container__error-error-bottom'>
+                            <p class='container__section-section-desktop-div-container__error-error-bottom-p'>Please
+                                connect to the internet to access the task cloud</p>
+                        </div>
+                    </div>`;
+
+    // Add the child:
+    panelDesktop.appendChild(desktopTaskElement);
+
+    // Tasks for mobile version:
+    const mobileTaskElement = document.createElement('div');
+    mobileTaskElement.classList.add('container__section-section-mobile-div-container__error');
+    mobileTaskElement.innerHTML = `<div class='container__section-section-mobile-div-container__error-error'>
+                        <div class='container__section-section-mobile-div-container__error-error-top'>
+                            <img class='container__section-section-mobile-div-container__error-error-top-img' alt='logo'
+                                src='../resources/images/wifi_off.png'>
+                        </div>
+                        <div class='container__section-section-mobile-div-container__error-error-middle'>
+                            <p class='container__section-section-mobile-div-container__error-error-middle-p'>No
+                                internet connection</p>
+                        </div>
+                        <div class='container__section-section-mobile-div-container__error-error-bottom'>
+                            <p class='container__section-section-mobile-div-container__error-error-bottom-p'>Please
+                                connect to the internet to access the task cloud</p>
+                        </div>
+                    </div>`;
+
+    // Add the child:
+    panelMobile.appendChild(mobileTaskElement);
 }
 
 // Get the tasks:
@@ -129,7 +171,6 @@ fetch(url)
         if (!response.ok) {
             // Error:
             throw new Error('Server status: ' + response.statusText);
-            showMessageInternetError();
         }
         return response.json();
     })
@@ -165,7 +206,9 @@ fetch(url)
 
         // Render tasks to UI:
         renderTasksInit(data, taskToShow);
+        console.log('Server status: ' + response.statusText);
     })
     .catch(error => {
         console.error('Error:', error);
+        showMessageInternetError();
     });

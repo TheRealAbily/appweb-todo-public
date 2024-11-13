@@ -10,6 +10,9 @@
     --general-font-2: #a7a7a7;
     --general-font-light-2: #ffffff26;
     --status-text: #ddd;
+    --general-font-error: #fff;
+    --general-font-error-2: #a7a7a7;
+    --general-font-light-error: #ffffff80;
 
     /* --- Scroll --- */
     --scrollbar-track: #232730;
