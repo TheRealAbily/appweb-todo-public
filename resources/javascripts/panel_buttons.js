@@ -1,5 +1,34 @@
 // Functions -----------------------------------------------------------------------------------------------------
 
+// Abort controls:
+const controller = new AbortController();
+const signal = controller.signal;
+
+// Load spin bar:
+function showLoadbar() {
+    // Clear the tags:
+    panelDesktop.innerHTML = '';
+    panelMobile.innerHTML = '';
+
+    // Load for desktop version:
+    const desktopTaskElement = document.createElement('div');
+    desktopTaskElement.classList.add('container__section-section-desktop-div__load');
+    desktopTaskElement.innerHTML = `<img class='container__section-section-desktop-div__load-img' alt='logo'
+                        src='../resources/images/load.png'>`;
+
+    // Add the child:
+    panelDesktop.appendChild(desktopTaskElement);
+
+    // Load for mobile version:
+    const mobileTaskElement = document.createElement('div');
+    mobileTaskElement.classList.add('container__section-section-mobile-div__load');
+    mobileTaskElement.innerHTML = `<img class='container__section-section-mobile-div__load-img' alt='logo'
+                        src='../resources/images/load.png'>`;
+
+    // Add the child:
+    panelMobile.appendChild(mobileTaskElement);
+}
+
 // Internet error:
 function showMessageInternetError() {
     // Clear the tags:
@@ -274,8 +303,14 @@ function show_tasks(type) {
     panelDesktop.innerHTML = ``;
     panelMobile.innerHTML = ``;
 
+    // Cancel the fetch:
+    // controller.abort();
+
+    // Load:
+    showLoadbar();
+
     // Get the tasks:
-    fetch(url)
+    fetch(url, { signal })
         .then(response => {
             if (!response.ok) {
                 // Error:
