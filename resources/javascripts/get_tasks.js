@@ -166,49 +166,57 @@ function showMessageInternetError() {
 }
 
 // Get the tasks:
-fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            // Error:
-            throw new Error('Server status: ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        var taskToShow = sessionStorage.getItem('panel-selected') || 'dashboard';
+let root = document.documentElement;
+var load = getComputedStyle(root).getPropertyValue('--firts_time_load').trim();
 
-        switch (taskToShow) {
-            case 'dashboard': {
-                taskToShow = 'pending';
-                break;
+if (load == 1) {
+    root.style.setProperty('--firts_time_load', 0)
+}
+else {
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                // Error:
+                throw new Error('Server status: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            var taskToShow = sessionStorage.getItem('panel-selected') || 'dashboard';
+
+            switch (taskToShow) {
+                case 'dashboard': {
+                    taskToShow = 'pending';
+                    break;
+                }
+
+                case 'completed-tasks': {
+                    taskToShow = 'done';
+                    break;
+                }
+
+                case 'tasks-history': {
+                    taskToShow = 'all';
+                    break;
+                }
+
+                case 'deleted-tasks': {
+                    taskToShow = 'deleted';
+                    break;
+                }
+
+                case 'log-out': {
+                    taskToShow = 'pending';
+                    break;
+                }
             }
 
-            case 'completed-tasks': {
-                taskToShow = 'done';
-                break;
-            }
-
-            case 'tasks-history': {
-                taskToShow = 'all';
-                break;
-            }
-
-            case 'deleted-tasks': {
-                taskToShow = 'deleted';
-                break;
-            }
-
-            case 'log-out': {
-                taskToShow = 'pending';
-                break;
-            }
-        }
-
-        // Render tasks to UI:
-        renderTasksInit(data, taskToShow);
-        console.log('Server status: ' + response.statusText);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        showMessageInternetError();
-    });
+            // Render tasks to UI:
+            renderTasksInit(data, taskToShow);
+            console.log('Server status: ' + response.statusText);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showMessageInternetError();
+        });
+}

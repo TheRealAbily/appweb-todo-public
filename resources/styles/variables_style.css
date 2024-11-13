@@ -98,5 +98,8 @@
     /* --- Font --- */
     --g-font-size: 13px;
 
+    /* --- Others --- */
+    --firts_time_load: 1;
+
     /* --- The creation of this page almost led the programmer to suicide --- */
 }
